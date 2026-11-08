@@ -1,0 +1,21 @@
+{
+  "multiseed_plan_sha256": "3288e09cc9a42ed62cf888cda3286e0c54d2f2856d70751e07ef5f23da24bdf6",
+  "completed_epochs": 50,
+  "best": {
+    "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+    "multiseed_plan_sha256": "3288e09cc9a42ed62cf888cda3286e0c54d2f2856d70751e07ef5f23da24bdf6",
+    "id": "ms-nyse-s4-u32-seed-425827170-rank-lstm",
+    "seed": 425827170,
+    "best_epoch": 42,
+    "best_validation_loss": 0.0003864286665616202,
+    "validation": {
+      "mse": 0.00037498307616174077,
+      "mrr": 0.0261722152745735,
+      "irr": -0.3191227522911504,
+      "author_btl": 0.6808772477088496
+    }
+  },
+  "log_offset": 15079,
+  "latest_checkpoint": "latest/epoch-50",
+  "best_checkpoint": "best/epoch-42"
+}

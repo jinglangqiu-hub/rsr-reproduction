@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-05",
+  "repository": "https://github.com/fulifeng/Temporal_Relational_Stock_Ranking",
+  "commit": "cfbb01bdf194b81bc5893a1b37aff1c0d0d2a82d",
+  "checkout": "partial clone with full history; sparse training/preprocess; data deferred",
+  "paper_sha256": "735675e846e548f35c139ad96c6fda2f6a936a3f65150b0a249ad36fffcc386f",
+  "training_started": false,
+  "source_hashes": {
+    "evaluator.py": "162d115b24df04cd0a7d6edfd13f1806703f33ea78d0ceed9f73c26aca278e0b",
+    "load_data.py": "f70536596b1d744c35e6d949ba78f46935edf1122f04525cab063f17c6578e95",
+    "rank_lstm.py": "7dde70d51b237e0fb6a4dfcb97e55c4d746c6d50235818d8c996ae955824bf19",
+    "relation_rank_lstm.py": "4d74cdc6920d94666daec5e93d3985f5dd3ff638f97a7d1ba2f6adcbd932629e"
+  },
+  "main_configs": 22,
+  "extra_five_seed_main_runs": 110
+}

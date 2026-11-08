@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RSR 训练观察</title>
+<style>
+:root{font:15px/1.5 "Segoe UI","Microsoft YaHei",sans-serif;color:#142b35;background:#edf3f2;--muted:#52686f;--line:#d7e3e1;--teal:#007568;--purple:#7350ac;--blue:#376a9a}*{box-sizing:border-box}body{margin:0}main{max-width:1320px;margin:auto;padding:28px 26px 44px}header{display:flex;justify-content:space-between;align-items:center;gap:16px}h1{font-size:32px;letter-spacing:-.04em;margin:2px 0 3px}h2{font-size:17px;margin:0}p{margin:0;color:var(--muted)}.eyebrow{font-size:12px;letter-spacing:.15em;color:var(--teal);font-weight:700}.badge{border:1px solid var(--line);background:white;border-radius:100px;padding:8px 14px;font-size:13px}.badge::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--teal);margin-right:8px}.toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:24px}select,button{font:inherit;background:white;border:1px solid #c9d8d6;border-radius:8px;padding:8px 12px;color:inherit}button{cursor:pointer}button:hover{background:#e1eeeb}select{flex:1;min-width:min(100%,310px)}:focus-visible{outline:3px solid #23877c;outline-offset:2px}.context{margin:10px 0 18px;font-size:13px}.cards,.plots{display:grid;gap:12px}.cards{grid-template-columns:repeat(4,minmax(0,1fr))}.plots{grid-template-columns:repeat(2,minmax(0,1fr));margin:12px 0}.card,.plot,.inspect,details{background:#fff;border:1px solid var(--line);border-radius:13px;padding:15px 17px}.card small,.plot p{display:block;color:var(--muted);font-size:12px}.value{font-variant-numeric:tabular-nums;font-size:27px;font-weight:650;margin:5px 0 0}.inspect{margin-top:12px;display:grid;gap:8px}.inspect label{display:flex;align-items:center;gap:12px}.inspect input{flex:1;accent-color:var(--teal)}.inspect p{font-size:13px}.legend{display:flex;flex-wrap:wrap;gap:14px;margin:8px 0 2px;font-size:12px;color:var(--muted)}.legend i{display:inline-block;width:12px;height:3px;vertical-align:middle;margin-right:5px}.plot svg{width:100%;height:170px;display:block;touch-action:pan-y}.plot text{font:11px "Segoe UI","Microsoft YaHei",sans-serif;fill:var(--muted)}.plot .series{fill:none;stroke-width:2;vector-effect:non-scaling-stroke}.plot .grid{stroke:#e4ecea}.plot .zero{stroke:#899c9f;stroke-dasharray:3 3}.plot .cursor{stroke:#7f9497;stroke-dasharray:2 3}details{font-size:13px;margin-top:12px}summary{cursor:pointer;font-weight:600}pre{white-space:pre-wrap;overflow-wrap:anywhere;color:var(--muted);max-height:240px;overflow:auto}.note{font-size:12px;margin-top:12px}.nowrap{white-space:nowrap}@media(max-width:800px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){main{padding:20px 12px}header{align-items:flex-start;flex-direction:column}.plots{grid-template-columns:1fr}.value{font-size:23px}}
+.parameters-link{display:inline-block;color:var(--teal);font-weight:650}.parameter-table{max-height:360px;overflow:auto;margin-top:10px;border:1px solid var(--line);border-radius:8px}.parameter-table table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}.parameter-table th,.parameter-table td{padding:8px 10px;text-align:left;white-space:nowrap;border-bottom:1px solid var(--line)}.parameter-table th{position:sticky;top:0;background:#edf3f2}.parameter-table .active{background:#e0f2ee}.parameter-table button{padding:3px 9px}.parameter-filter{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}.parameter-filter select{flex:0 1 auto;min-width:0}.parameter-filter p{font-size:12px}
+</style>
+</head>
+<body>
+<main>
+  <header><div><div class="eyebrow">RELATIONAL STOCK RANKING</div><h1>RSR 训练观察</h1><p>本地逐轮指标 · 每 2 秒刷新</p></div><div class="badge" id="status" role="status">正在连接</div></header>
+  <div class="toolbar"><label for="run">实验运行</label><select id="run"><option value="">自动跟随当前训练</option></select><button id="refresh">立即刷新</button><button id="pause" aria-pressed="false">暂停刷新</button><a class="parameters-link" id="parameter-link" href="#run-parameters">全部训练参数</a></div>
+  <p class="context" id="context">正在读取冻结实验清单。</p>
+  <section class="cards" aria-label="当前训练配置" style="margin-bottom:12px">
+    <article class="card" style="grid-column:span 2"><b>模型与建模方式（Model and Modeling）</b><p id="modeling">—</p><small id="modeling-detail"></small></article>
+    <article class="card" style="grid-column:span 2"><b>关系数据（Relation Dataset）</b><p id="relation">—</p></article>
+    <article class="card"><b>序列长度 S</b><small>Sequence Length</small><p id="seq">—</p></article>
+    <article class="card"><b>隐藏维度 U</b><small>Hidden Dimension</small><p id="unit">—</p></article>
+    <article class="card"><b>排序权重 α</b><small>Ranking Loss Weight</small><p id="alpha">—</p></article>
+    <article class="card"><b>Adam 学习率</b><small>Learning Rate</small><p id="lr">—</p></article>
+  </section>
+  <details id="run-parameters" open style="margin:0 0 12px">
+    <summary id="parameter-count">全部训练参数</summary>
+    <div class="parameter-filter">
+      <label for="batch-filter">查看批次</label>
+      <select id="batch-filter">
+        <option value="search">本轮全部批次</option>
+        <option value="1">批次 1 · 基线</option>
+        <option value="2">批次 2 · 序列长度 S</option>
+        <option value="3">批次 3 · 隐藏维度 U</option>
+        <option value="4">批次 4 · 排序权重 α</option>
+        <option value="5">批次 5 · 优胜组合</option>
+        <option value="6">批次 6 · 固定参数五种子</option>
+        <option value="archive">上一轮作者种子实验</option>
+        <option value="all">所有运行</option>
+      </select>
+      <p>每行是一项训练。点击「查看」切换到该运行的日志和曲线。</p>
+    </div>
+    <div class="parameter-table" tabindex="0" aria-label="可滚动的训练参数表">
+      <table aria-label="每项训练的配置">
+        <thead><tr><th scope="col">批次</th><th scope="col">市场</th><th scope="col">模型</th><th scope="col">关系</th><th scope="col">序列长度 S</th><th scope="col">隐藏维度 U</th><th scope="col">排序权重 α</th><th scope="col">Adam 学习率</th><th scope="col">预测步长</th><th scope="col">种子</th><th scope="col">轮次</th><th scope="col">状态</th><th scope="col">曲线</th></tr></thead>
+        <tbody id="parameter-rows"></tbody>
+      </table>
+    </div>
+  </details>
+  <section class="cards" aria-label="本轮验证指标">
+    <article class="card"><b>已完成轮次</b><small>Completed Epochs</small><div class="value" id="progress">—</div><small id="best">最低验证总损失轮次 —</small></article>
+    <article class="card"><b>验证均方误差</b><small>Mean Squared Error (MSE)</small><div class="value" id="mse">—</div></article>
+    <article class="card"><b>验证平均倒数排名</b><small>Mean Reciprocal Rank (MRR)</small><div class="value" id="mrr">—</div></article>
+    <article class="card"><b>验证累计投资回报率</b><small>Cumulative Investment Return Ratio (IRR)</small><div class="value" id="irr">—</div></article>
+  </section>
+  <section class="inspect"><label for="epoch">查看轮次 <input id="epoch" type="range" min="1" max="1" value="1" disabled></label><p id="reading">训练写完第一轮日志后，曲线会自动出现。</p></section>
+  <div class="legend" id="legend"></div>
+  <section class="plots" id="plots" aria-label="逐轮指标曲线"></section>
+  <p class="note">横轴为训练轮次。验证总损失最低的轮次用于选择检查点。累计投资回报率按论文定义显示，由作者日志的 <code>btl − 1</code> 转换。</p>
+  <details><summary>最近训练日志</summary><pre id="log">暂无日志。</pre></details>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const relationLabels = {sector_industry:'行业关系（Industry）',wikidata:'Wikidata 企业关系（Wiki）'};
+const relationLabel = config => config.method === 'Rank_LSTM' ? '无关系输入'
+  : relationLabels[config.relation] ?? '关系类型待核对';
+const batchLabels = {1:'批次 1 · 基线',2:'批次 2 · 序列长度 S',3:'批次 3 · 隐藏维度 U',4:'批次 4 · 排序权重 α',5:'批次 5 · 优胜组合',6:'批次 6 · 固定参数五种子'};
+const modelLabels = {Rank_LSTM:'Rank_LSTM 时序预训练',RSR_E:'RSR_E 显式建模',RSR_I:'RSR_I 隐式建模'};
+const modelDetails = {
+  Rank_LSTM:'用价格序列生成供 RSR 使用的时序嵌入（Temporal Embedding）',
+  RSR_E:'时序图卷积（Temporal Graph Convolution，TGC）· Explicit Modeling',
+  RSR_I:'时序图卷积（Temporal Graph Convolution，TGC）· Implicit Modeling',
+};
+const modelLabel = config => modelLabels[config.method] ?? '模型待核对';
+const provenanceLabels = {author_readme:'作者 README 配置',market_template:'沿用同市场参数'};
+const groups = {train:['训练集','#376a9a'],validation:['验证集','#007568'],test:['测试集','#7350ac']};
+const metrics = [
+  ['loss','总损失','Total Loss',['train','validation','test']],
+  ['mse','均方误差','Mean Squared Error (MSE)',['validation','test']],
+  ['mrr','平均倒数排名','Mean Reciprocal Rank (MRR)',['validation','test']],
+  ['irr','累计投资回报率','Cumulative Investment Return Ratio (IRR)',['validation','test']],
+];
+for (const [label,color] of Object.values(groups)) {
+  const item = document.createElement('span'), line = document.createElement('i');
+  line.style.backgroundColor = color; item.append(line,label); $('legend').append(item);
+}
+for (const [key,cn,en] of metrics) {
+  const panel = document.createElement('article'); panel.className = 'plot';
+  panel.innerHTML = `<h2>${cn}</h2><p>${en}</p><svg id="chart-${key}" role="img" aria-label="${cn}逐轮曲线"></svg>`;
+  $('plots').append(panel);
+}
+let state, selected, paused=false, request=0;
+const fmt = (n,key,short=false) => !Number.isFinite(n) ? '—' : key==='irr' ? `${(100*n).toFixed(short?1:2)}%` : (Math.abs(n)>0 && Math.abs(n)<0.001 ? n.toExponential(2) : n.toFixed(short?3:5));
+
+function renderParameters(runs) {
+  const filter=$('batch-filter').value;
+  const filtered=runs.filter(run=>filter==='all'
+    || (filter==='search' && run.batch!=null)
+    || (filter==='archive' && run.batch==null)
+    || String(run.batch)===filter);
+  $('parameter-count').textContent=`全部训练参数（当前显示 ${filtered.length} 项）`;
+  const body=$('parameter-rows'), signature=JSON.stringify(filtered);
+  if (body.dataset.signature===signature) return;
+  const rows=filtered.map(run=>{
+    const row=document.createElement('tr');
+    row.classList.toggle('active',run.active || run.paused);
+    const status=run.paused?'已暂停':run.active?'正在训练':run.completed?'已完成':run.has_log?'有日志':'待执行';
+    const values=[batchLabels[run.batch] ?? '作者种子实验',run.market,modelLabel(run),
+      relationLabel(run),run.seq,run.unit,run.alpha,run.lr,
+      run.steps==null?'—':`${run.steps} 日`,run.seed,run.epochs,status];
+    for(const value of values) row.insertCell().textContent=value ?? '—';
+    const button=document.createElement('button');
+    button.textContent='查看';
+    button.title=run.id;
+    button.onclick=()=>{
+      $('run').value=run.id;
+      $('run').dispatchEvent(new Event('change'));
+      $('run').focus();
+    };
+    row.insertCell().append(button);
+    return row;
+  });
+  body.replaceChildren(...rows);
+  body.dataset.signature=signature;
+}
+
+function draw() {
+  const rows=state?.rows ?? [], last=rows.at(-1), row=rows.find(item=>item.epoch===selected) ?? last;
+  const epochs=state?.config.epochs ?? 50;
+  for (const key of ['mse','mrr','irr']) $(key).textContent=fmt(row?.validation?.[key],key);
+  const split=row?.test?'测试集':'验证集', inspected=row?.test ?? row?.validation;
+  $('reading').textContent=row ? `第 ${row.epoch} 轮 · 用时 ${Number.isFinite(row.seconds)?row.seconds.toFixed(1)+' 秒':'—'} · ${split}均方误差 ${fmt(inspected?.mse,'mse')} · 平均倒数排名 ${fmt(inspected?.mrr,'mrr')} · 累计投资回报率 ${fmt(inspected?.irr,'irr')}` : '训练写完第一轮日志后，曲线会自动出现。';
+  for (const [key,, , splits] of metrics) {
+    const svg=$(`chart-${key}`), w=Math.max(250,svg.clientWidth), h=170, l=60, r=15, t=14, b=27;
+    const values=rows.flatMap(item=>splits.map(split=>item[split]?.[key]).filter(Number.isFinite));
+    let low=values.length?Math.min(...values):0, high=values.length?Math.max(...values):1;
+    if(key==='irr'){low=Math.min(low,0);high=Math.max(high,0);}
+    const pad=(high-low)*.08 || Math.max(Math.abs(high)*.1,.00001);
+    low-=pad;high+=pad;
+    const x=epoch=>l+(epoch-1)/Math.max(1,epochs-1)*(w-l-r);
+    const y=value=>t+(high-value)/(high-low)*(h-t-b);
+    svg.setAttribute('viewBox',`0 0 ${w} ${h}`);
+    let markup='';
+    for(let i=0;i<=4;i++){
+      const v=low+(high-low)*i/4, yy=y(v);
+      markup+=`<line class="grid" x1="${l}" x2="${w-r}" y1="${yy}" y2="${yy}"/><text x="${l-7}" y="${yy+4}" text-anchor="end">${fmt(v,key,true)}</text>`;
+    }
+    for(const e of new Set([1,Math.round(epochs/2),epochs])) markup+=`<text x="${x(e)}" y="${h-8}" text-anchor="middle">${e}</text>`;
+    if(key==='irr'&&values.length) markup+=`<line class="zero" x1="${l}" x2="${w-r}" y1="${y(0)}" y2="${y(0)}"/>`;
+    if(!values.length) markup+=`<text x="${(l+w-r)/2}" y="${h/2}" text-anchor="middle">暂无已完成轮次</text>`;
+    if(row) markup+=`<line class="cursor" x1="${x(row.epoch)}" x2="${x(row.epoch)}" y1="${t}" y2="${h-b}"/>`;
+    for(const split of splits){
+      const color=groups[split][1]; let path='', connected=false;
+      for(const item of rows){
+        const value=item[split]?.[key];
+        if(!Number.isFinite(value)){connected=false;continue;}
+        path+=`${connected?'L':'M'}${x(item.epoch)},${y(value)} `; connected=true;
+      }
+      markup+=`<path class="series" stroke="${color}" d="${path}"/>`;
+      if(Number.isFinite(row?.[split]?.[key])) markup+=`<circle fill="${color}" r="3" cx="${x(row.epoch)}" cy="${y(row[split][key])}"/>`;
+    }
+    svg.innerHTML=markup;
+    svg.onclick=event=>{if(!rows.length)return;const bounds=svg.getBoundingClientRect();const e=1+(event.clientX-bounds.left-l)/(w-l-r)*(epochs-1);selected=rows.reduce((a,c)=>Math.abs(c.epoch-e)<Math.abs(a.epoch-e)?c:a).epoch;$('epoch').value=rows.findIndex(item=>item.epoch===selected)+1;draw();};
+  }
+}
+
+function render(data){
+  const follow=selected===undefined || state?.run.id!==data.run.id || selected===state?.rows.at(-1)?.epoch;
+  state=data;
+  const menu=$('run'), wanted=menu.value;
+  const options=data.runs.map(r=>new Option(
+    `${r.batch?'批次 '+r.batch+' · ':''}${r.market} · 种子 ${r.seed} · S=${r.seq} / U=${r.unit} / α=${r.alpha} · ${modelLabel(r)} · ${relationLabel(r)}${r.paused?' · 已暂停':r.active?' · 正在训练':''}`,r.id));
+  const signature=JSON.stringify(options.map(o=>[o.value,o.text]));
+  if(menu.dataset.signature!==signature){menu.replaceChildren(new Option('自动跟随当前训练',''),...options);menu.value=wanted;menu.dataset.signature=signature;}
+  renderParameters(data.runs);
+  const {config,run,rows}=data,last=rows.at(-1);
+  if(follow)selected=last?.epoch;
+  $('status').textContent=paused?'刷新已暂停':data.status;
+  const provenance = provenanceLabels[config.parameter_provenance];
+  const batch = batchLabels[config.batch];
+  const progress = config.batch === 6 ? data.multiseed : config.batch === 5 ? data.combination : data.search;
+  const total = data.runs.filter(item=>item.batch && (config.batch>=5 ? item.batch===config.batch : item.batch<=4)).length;
+  const searchProgress = batch && Array.isArray(progress?.completed)
+    ? ` · 已完成 ${progress.completed.length} / ${total} 项` : '';
+  $('context').textContent=`${batch?batch+' · ':''}${config.market} · 随机种子 ${run.seed} · 预测步长 ${config.steps ?? '—'} 日${provenance?' · '+provenance:''}${searchProgress}${data.updated?' · 日志更新 '+new Date(data.updated*1000).toLocaleTimeString('zh-CN'):''}`;
+  $('modeling').textContent=modelLabel(config);
+  $('modeling-detail').textContent=modelDetails[config.method] ?? '';
+  $('relation').textContent=relationLabel(config);
+  for (const key of ['seq','unit','alpha','lr']) $(key).textContent=config[key] ?? '—';
+  $('progress').textContent=`${last?.epoch ?? 0} / ${config.epochs}`;
+  $('best').textContent=`最低验证总损失轮次 ${data.best_epoch ?? '—'}`;
+  $('epoch').max=Math.max(1,rows.length);$('epoch').disabled=!last;
+  $('epoch').value=Math.max(1,rows.findIndex(item=>item.epoch===selected)+1);
+  $('log').textContent=data.log.join('\n') || '暂无日志。';
+  draw();
+}
+
+async function poll(force=false){
+  if(paused&&!force)return;
+  const current=++request;
+  try{
+    const response=await fetch('/api/state?run='+encodeURIComponent($('run').value),{cache:'no-store'});
+    if(!response.ok)throw Error(response.status);
+    const data=await response.json();if(current===request)render(data);
+  }catch(error){if(current===request)$('status').textContent='本地监控服务连接中断';}
+}
+$('run').onchange=()=>{selected=undefined;poll(true);};
+$('parameter-link').onclick=()=>{$('run-parameters').open=true;};
+$('batch-filter').onchange=()=>{if(state)renderParameters(state.runs);};
+const requestedBatch=new URLSearchParams(location.search).get('batch');
+if (requestedBatch==='5' || requestedBatch==='6') $('batch-filter').value=requestedBatch;
+$('refresh').onclick=()=>poll(true);
+$('pause').onclick=()=>{paused=!paused;++request;$('pause').textContent=paused?'恢复刷新':'暂停刷新';$('pause').setAttribute('aria-pressed',paused);if(paused)$('status').textContent='刷新已暂停';else poll(true);};
+$('epoch').oninput=()=>{selected=state?.rows[Number($('epoch').value)-1]?.epoch;draw();};
+window.addEventListener('resize',draw);
+draw();poll();setInterval(poll,2000);
+</script>
+</body>
+</html>

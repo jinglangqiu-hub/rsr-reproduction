@@ -1,0 +1,118 @@
+{
+  "script": "tools/plot_hparam_stage.py",
+  "script_sha256": "ae30ff8a11161f06bc6d5bca575bbc2f11301c7cddc9cb7291d7ae40f732d549",
+  "numpy_version": "1.26.4",
+  "matplotlib_version": "3.10.8",
+  "source_sha256": {
+    "runs/hparam-search-summary.json": "15c9b98f152dc3ae35c82955289c3ca5df69b4bddcbed84b1363b89a3865987c",
+    "runs/hparam-combination-summary.json": "5106e86b38fa5839254b52f3ee7507f1161581d7ab1d92b7cf5ce86a8f02ac1d",
+    "runs/frozen-test/analysis.json": "e90bbd5d9d07efa8b5e89d2e13bb108f88516254e3a2b9521d28c813b32220ee",
+    "runs/frozen-test-manifest.json": "b61890a6f47d809ec437616aef3a05cb6ecfe70e2348a33b75e1564b02da38cd",
+    "runs/frozen-test/hparam-nasdaq-s8-u64-a0.1-wikidata-rsr_i.predictions.npz": "75c960cf10fd1767afd294f6726aea6187f27513ad17d06e646746ef40f0db19",
+    "runs/frozen-test/hparam-nasdaq-s8-u64-a0.1-wikidata-rsr_e.predictions.npz": "cd65816a2a7a92be5ee91c6aacf1140b91f4010a344cfe5e5f6de73412595293",
+    "runs/frozen-test/hparam-nasdaq-s16-u64-a10-sector_industry-rsr_i.predictions.npz": "bd3b260de6c130849b83dafee3944fa6b6e4de8804b35e1cb97ff9e01e0a474c",
+    "runs/frozen-test/hparam-nasdaq-s16-u16-a0.1-sector_industry-rsr_e.predictions.npz": "48b073f2a5d9a33b5e3d30d13921e2df0734b3d1cd7b9e9789007ab93e6d7dd0",
+    "runs/frozen-test/hparam-nyse-s16-u32-a10-wikidata-rsr_i.predictions.npz": "bbc42fb544e53efb519a71e3536057e80615276aa8f08673a572763a89343998",
+    "runs/frozen-test/hparam-nyse-s8-u32-a1-wikidata-rsr_e.predictions.npz": "f884e1ca5be625dfb1571d71bb20822828f9f09ce43614c259164ba48cfdf649",
+    "runs/frozen-test/hparam-nyse-s4-u32-a10-sector_industry-rsr_i.predictions.npz": "6ccebb7f331c862a15d65a11d03463338c6ef8bc0a9506288694822db54cfc99",
+    "runs/frozen-test/hparam-nyse-s16-u32-a10-sector_industry-rsr_e.predictions.npz": "a2fcaaa09556f7d6db829bbd599c0b66e38c384a3b6121025c5f1fb67f945219",
+    "runs/hparam-nasdaq-s8-u128-a10-wikidata-rsr_i/train.log": "a9f6663781506eb9c27d7ab88194373cbbc000f2b526fe088974cdb531e7a829",
+    "runs/hparam-nasdaq-s8-u32-a10-wikidata-rsr_e/train.log": "b9ed8d348b876b4fd6ce1edf0bcaa7096d1d628327724f3c93d59b6fd925feaa",
+    "runs/hparam-nasdaq-s8-u32-a10-sector_industry-rsr_i/train.log": "ee855e868ffc1c95a57ed45f1b38b69eb8f18312609c43e723110c394da9962c",
+    "runs/hparam-nasdaq-s4-u16-a10-sector_industry-rsr_e/train.log": "6d6dcbe3536752c03648a130cc734104c9785b2ea39caaa8b361fec94e7de854",
+    "runs/hparam-nyse-s4-u128-a10-sector_industry-rsr_i/train.log": "0006c10cc0bd29ae6f1e996e43d9cd599e1e70bc0ee03cacf550aa62b356c2fc",
+    "runs/hparam-nyse-s16-u32-a1-wikidata-rsr_e/train.log": "7ed3340cc8d9c7cd311a7910ade99246e34f8a994cf916ab51b41f1fc6fb719d"
+  },
+  "figures": [
+    {
+      "category": "experimental-results",
+      "stem": "E01-sequence-length-search",
+      "title": "序列长度 S 的独立搜索结果",
+      "files": [
+        "experimental-results/E01-sequence-length-search.png",
+        "experimental-results/E01-sequence-length-search.svg"
+      ]
+    },
+    {
+      "category": "experimental-results",
+      "stem": "E02-hidden-dimension-search",
+      "title": "隐藏维度 U 的独立搜索结果",
+      "files": [
+        "experimental-results/E02-hidden-dimension-search.png",
+        "experimental-results/E02-hidden-dimension-search.svg"
+      ]
+    },
+    {
+      "category": "experimental-results",
+      "stem": "E03-ranking-weight-search",
+      "title": "排序权重 α 的独立搜索结果",
+      "files": [
+        "experimental-results/E03-ranking-weight-search.png",
+        "experimental-results/E03-ranking-weight-search.svg"
+      ]
+    },
+    {
+      "category": "experimental-results",
+      "stem": "E04-frozen-test-metrics",
+      "title": "冻结配置的测试集指标",
+      "files": [
+        "experimental-results/E04-frozen-test-metrics.png",
+        "experimental-results/E04-frozen-test-metrics.svg"
+      ]
+    },
+    {
+      "category": "experimental-results",
+      "stem": "E05-test-cumulative-irr",
+      "title": "测试期逐日累计投资回报率",
+      "files": [
+        "experimental-results/E05-test-cumulative-irr.png",
+        "experimental-results/E05-test-cumulative-irr.svg"
+      ]
+    },
+    {
+      "category": "analysis-results",
+      "stem": "A01-validation-test-irr",
+      "title": "验证期与测试期的累计回报对照",
+      "files": [
+        "analysis-results/A01-validation-test-irr.png",
+        "analysis-results/A01-validation-test-irr.svg"
+      ]
+    },
+    {
+      "category": "analysis-results",
+      "stem": "A02-combination-comparison",
+      "title": "6 组补跑与原最优配置的验证回报对照",
+      "files": [
+        "analysis-results/A02-combination-comparison.png",
+        "analysis-results/A02-combination-comparison.svg"
+      ]
+    },
+    {
+      "category": "analysis-results",
+      "stem": "A03-return-concentration",
+      "title": "测试收益对最佳 3 个交易日的敏感性",
+      "files": [
+        "analysis-results/A03-return-concentration.png",
+        "analysis-results/A03-return-concentration.svg"
+      ]
+    },
+    {
+      "category": "analysis-results",
+      "stem": "A04-checkpoint-rule-sensitivity",
+      "title": "检查点选择规则的敏感性",
+      "files": [
+        "analysis-results/A04-checkpoint-rule-sensitivity.png",
+        "analysis-results/A04-checkpoint-rule-sensitivity.svg"
+      ]
+    },
+    {
+      "category": "analysis-results",
+      "stem": "A05-independent-search-gains",
+      "title": "单项搜索相对市场基线的验证回报增益",
+      "files": [
+        "analysis-results/A05-independent-search-gains.png",
+        "analysis-results/A05-independent-search-gains.svg"
+      ]
+    }
+  ]
+}

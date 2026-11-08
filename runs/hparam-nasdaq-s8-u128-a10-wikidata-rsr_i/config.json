@@ -1,0 +1,28 @@
+{
+  "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+  "combination_plan_sha256": "f748661d66903f3a510086c50b74a184db5ef361055623bacbaa32993aa4ff79",
+  "run": {
+    "id": "hparam-nasdaq-s8-u128-a10-wikidata-rsr_i",
+    "configuration": "hparam-nasdaq-s8-u128-a10-wikidata-rsr_i",
+    "seed": 123456789
+  },
+  "configuration": {
+    "market": "NASDAQ",
+    "seq": 8,
+    "unit": 128,
+    "lr": 0.001,
+    "steps": 1,
+    "epochs": 50,
+    "ticker_file": "NASDAQ_tickers_qualify_dr-0.98_min-5_smooth.csv",
+    "stocks": 1026,
+    "batch": 5,
+    "axis": "combination",
+    "parameter_provenance": "combination_validation",
+    "stage": "relation",
+    "alpha": 10,
+    "method": "RSR_I",
+    "relation": "wikidata",
+    "inner_prod": false,
+    "embedding_run": "hparam-nasdaq-s8-u128-rank-lstm"
+  }
+}

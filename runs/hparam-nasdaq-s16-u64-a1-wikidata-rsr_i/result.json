@@ -1,0 +1,12 @@
+{
+  "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+  "id": "hparam-nasdaq-s16-u64-a1-wikidata-rsr_i",
+  "best_epoch": 22,
+  "best_validation_loss": 0.000518621382879145,
+  "validation": {
+    "mse": 0.0004994937505337978,
+    "mrr": 0.03486992168436666,
+    "irr": 0.5481551770935766,
+    "author_btl": 1.5481551770935766
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+  "id": "hparam-nasdaq-s16-u64-rank-lstm",
+  "best_epoch": 41,
+  "best_validation_loss": 0.00050413126149261,
+  "validation": {
+    "mse": 0.0004967501946532267,
+    "mrr": 0.030206198976121392,
+    "irr": 1.4698766817164142,
+    "author_btl": 2.469876681716414
+  },
+  "embedding_shape": [
+    1026,
+    992,
+    64
+  ]
+}

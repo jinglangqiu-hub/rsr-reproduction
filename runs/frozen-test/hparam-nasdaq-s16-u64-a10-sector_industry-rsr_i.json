@@ -1,0 +1,37 @@
+{
+  "manifest_sha256": "b61890a6f47d809ec437616aef3a05cb6ecfe70e2348a33b75e1564b02da38cd",
+  "id": "hparam-nasdaq-s16-u64-a10-sector_industry-rsr_i",
+  "configuration": {
+    "market": "NASDAQ",
+    "seq": 16,
+    "unit": 64,
+    "lr": 0.001,
+    "steps": 1,
+    "epochs": 50,
+    "ticker_file": "NASDAQ_tickers_qualify_dr-0.98_min-5_smooth.csv",
+    "stocks": 1026,
+    "batch": 4,
+    "axis": "alpha",
+    "parameter_provenance": "independent_search",
+    "stage": "relation",
+    "alpha": 10,
+    "method": "RSR_I",
+    "relation": "sector_industry",
+    "inner_prod": false,
+    "embedding_run": "hparam-nasdaq-s16-u64-rank-lstm"
+  },
+  "best_epoch": 46,
+  "validation": {
+    "mse": 0.0005085990418053307,
+    "mrr": 0.03829095684233793,
+    "irr": 1.5767555518832523,
+    "author_btl": 2.5767555518832523
+  },
+  "test": {
+    "mse": 0.000808886102025373,
+    "mrr": 0.024681090229143443,
+    "irr": 0.6989952629082836,
+    "author_btl": 1.6989952629082836
+  },
+  "optimizer_steps_executed": 0
+}

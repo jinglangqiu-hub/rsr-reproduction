@@ -1,0 +1,32 @@
+Run log: /mnt/c/Users/luckythrower/Desktop/RSR/runs/nyse-sector_industry-rsre-public-seed-123456789/train.log
+{
+  "manifest_sha256": "037842cbe2509486c1e77e847de03d41934ae560094cd71c87dbfef4f18e71e1",
+  "id": "nyse-sector_industry-rsre-public-seed-123456789",
+  "best_epoch": 48,
+  "best_validation_loss": 0.0003998024787997276,
+  "validation": {
+    "mse": 0.0003669557456371685,
+    "mrr": 0.04822915895042449,
+    "irr": 1.6244274032942485,
+    "author_btl": 2.6244274032942485
+  },
+  "test": {
+    "mse": 0.0002280905474353901,
+    "mrr": 0.03266094349266263,
+    "irr": 1.1237955308188248,
+    "author_btl": 2.1237955308188248
+  }
+}
+ rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793896783.594290    2110 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING:tensorflow:From /home/luckythrower/.venvs/rsr-gpu/lib/python3.11/site-packages/tensorflow/python/compat/v2_compat.py:98: disable_resource_variables (from tensorflow.python.ops.resource_variables_toggle) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+W0000 00:00:1793896784.653179    2110 gpu_device.cc:2459] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0a. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+WARNING:tensorflow:From /home/luckythrower/.venvs/rsr-gpu/lib/python3.11/site-packages/tensorflow/python/util/dispatch.py:1264: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+W0000 00:00:1793896905.145687    2110 gpu_device.cc:2459] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0a. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+I0000 00:00:1793896905.540726    2110 gpu_device.cc:2043] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 9226 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 5070 Ti Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 12.0a
+I0000 00:00:1793896905.642589    2110 mlir_graph_optimization_pass.cc:437] MLIR V1 optimization pass is not enabled

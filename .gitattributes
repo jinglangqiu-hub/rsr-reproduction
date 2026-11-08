@@ -1,0 +1,7 @@
+# Frozen manifests hash exact bytes. Preserve the original line endings.
+* -text
+*.png binary
+*.jpg binary
+*.npy binary
+*.npz binary
+*.zip binary

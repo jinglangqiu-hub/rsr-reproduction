@@ -1,0 +1,42 @@
+{
+  "plan_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+  "markets": {
+    "NASDAQ": {
+      "file_sha256": "8b443b1658a29e886ebf132e01f46e35168511a0ceee80233effc48a6498c726",
+      "stocks": 1026,
+      "train_first": "2013-01-02",
+      "train_last": "2015-12-31",
+      "valid_first": "2016-01-04",
+      "valid_last": "2016-12-30"
+    },
+    "NYSE": {
+      "file_sha256": "430091f54a9233d66535b1f2772a1124e376cb3019b490247bc35c4d71874eda",
+      "stocks": 1737,
+      "train_first": "2013-01-02",
+      "train_last": "2015-12-31",
+      "valid_first": "2016-01-04",
+      "valid_last": "2016-12-30"
+    }
+  },
+  "gpu_probes": [
+    {
+      "stage": "embedding",
+      "market": "NYSE",
+      "method": "Rank_LSTM",
+      "relation": null,
+      "seq": 8,
+      "unit": 128
+    },
+    {
+      "stage": "relation",
+      "market": "NYSE",
+      "method": "RSR_I",
+      "relation": "sector_industry",
+      "seq": 8,
+      "unit": 128
+    }
+  ],
+  "optimizer_steps_executed": 0,
+  "training_targets_per_epoch": 740,
+  "validation_targets": 252
+}

@@ -1,0 +1,21 @@
+{
+  "multiseed_plan_sha256": "3288e09cc9a42ed62cf888cda3286e0c54d2f2856d70751e07ef5f23da24bdf6",
+  "completed_epochs": 50,
+  "best": {
+    "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+    "multiseed_plan_sha256": "3288e09cc9a42ed62cf888cda3286e0c54d2f2856d70751e07ef5f23da24bdf6",
+    "id": "ms-nyse-sector_industry-rsr_i-s4-u32-a10-seed-20885008",
+    "seed": 20885008,
+    "best_epoch": 39,
+    "best_validation_loss": 0.0004505242374025762,
+    "validation": {
+      "mse": 0.00036769618212407373,
+      "mrr": 0.03203542386511521,
+      "irr": 0.720808828365989,
+      "author_btl": 1.720808828365989
+    }
+  },
+  "log_offset": 15132,
+  "latest_checkpoint": "latest/epoch-50",
+  "best_checkpoint": "best/epoch-39"
+}

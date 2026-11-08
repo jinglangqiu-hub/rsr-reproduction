@@ -1,0 +1,14 @@
+{
+  "analysis_sha256": "1414710c8a247d349f81e281b710d51c5f3d85e781c462457f5ac1495b071a13",
+  "script_sha256": "741c258832f2bf03632094fbf9c5d7f5939eed1def8511fca529c07d8c68f2de",
+  "figures": [
+    "01-test-metrics-mean-std",
+    "02-test-irr-by-seed",
+    "03-event-day-sensitivity"
+  ],
+  "formats": [
+    "png",
+    "svg"
+  ],
+  "png_dpi": 240
+}

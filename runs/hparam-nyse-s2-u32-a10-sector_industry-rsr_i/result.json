@@ -1,0 +1,12 @@
+{
+  "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+  "id": "hparam-nyse-s2-u32-a10-sector_industry-rsr_i",
+  "best_epoch": 48,
+  "best_validation_loss": 0.00046659167573024105,
+  "validation": {
+    "mse": 0.0003675770490681157,
+    "mrr": 0.0442491269507208,
+    "irr": 1.4204302270081826,
+    "author_btl": 2.4204302270081826
+  }
+}

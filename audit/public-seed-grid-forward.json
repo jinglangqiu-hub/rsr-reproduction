@@ -1,0 +1,35 @@
+{
+  "optimizer_steps": 0,
+  "synthetic_numpy_agreement": {
+    "Rank_LSTM": {
+      "gpu_streams": [
+        "/device:GPU:0/stream:13",
+        "/device:GPU:0/stream:13<MemcpyD2D>",
+        "/device:GPU:0/stream:14<MemcpyH2D>",
+        "/device:GPU:0/stream:15<MemcpyD2H>",
+        "/device:GPU:0/stream:all"
+      ],
+      "loss": 0.983173668384552
+    },
+    "RSR_I": {
+      "gpu_streams": [
+        "/device:GPU:0/stream:",
+        "/device:GPU:0/stream:13",
+        "/device:GPU:0/stream:14<MemcpyH2D>",
+        "/device:GPU:0/stream:15<MemcpyD2H>",
+        "/device:GPU:0/stream:all"
+      ],
+      "loss": 1.1173964738845825
+    },
+    "RSR_E": {
+      "gpu_streams": [
+        "/device:GPU:0/stream:",
+        "/device:GPU:0/stream:13",
+        "/device:GPU:0/stream:14<MemcpyH2D>",
+        "/device:GPU:0/stream:15<MemcpyD2H>",
+        "/device:GPU:0/stream:all"
+      ],
+      "loss": 1.046362280845642
+    }
+  }
+}

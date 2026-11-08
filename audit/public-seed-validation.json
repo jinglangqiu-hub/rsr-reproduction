@@ -1,0 +1,61 @@
+{
+  "manifest_sha256": "037842cbe2509486c1e77e847de03d41934ae560094cd71c87dbfef4f18e71e1",
+  "checks": [
+    {
+      "id": "nasdaq-wikidata-rsri-public-seed-123456789",
+      "epochs": 50,
+      "best_epoch": 36,
+      "best_validation_loss": 0.0004945731084190479,
+      "seconds": 482.5
+    },
+    {
+      "id": "nyse-sector_industry-rsri-public-seed-123456789",
+      "epochs": 50,
+      "best_epoch": 48,
+      "best_validation_loss": 0.0003996510306081738,
+      "seconds": 759.9
+    },
+    {
+      "id": "nasdaq-wikidata-rsre-public-seed-123456789",
+      "epochs": 50,
+      "best_epoch": 36,
+      "best_validation_loss": 0.0004951282667568034,
+      "seconds": 446.8
+    },
+    {
+      "id": "nasdaq-sector_industry-rsri-public-seed-123456789",
+      "epochs": 50,
+      "best_epoch": 26,
+      "best_validation_loss": 0.0004962478351011495,
+      "seconds": 538.7
+    },
+    {
+      "id": "nasdaq-sector_industry-rsre-public-seed-123456789",
+      "epochs": 50,
+      "best_epoch": 43,
+      "best_validation_loss": 0.0004993036900631278,
+      "seconds": 499.5
+    },
+    {
+      "id": "nyse-wikidata-rsri-public-seed-123456789",
+      "epochs": 50,
+      "best_epoch": 50,
+      "best_validation_loss": 0.000399620226166989,
+      "seconds": 580.6
+    },
+    {
+      "id": "nyse-wikidata-rsre-public-seed-123456789",
+      "epochs": 50,
+      "best_epoch": 48,
+      "best_validation_loss": 0.00039473374852691664,
+      "seconds": 525.2
+    },
+    {
+      "id": "nyse-sector_industry-rsre-public-seed-123456789",
+      "epochs": 50,
+      "best_epoch": 48,
+      "best_validation_loss": 0.0003998024787997276,
+      "seconds": 727.9
+    }
+  ]
+}

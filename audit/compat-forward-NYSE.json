@@ -1,0 +1,22 @@
+{
+  "optimizer_steps": 0,
+  "author_data_forward": {
+    "market": "NYSE",
+    "stocks": 1737,
+    "relation": "sector_industry",
+    "embedding": "NYSE_rank_lstm_seq-8_unit-32_0.csv.npy",
+    "validation_offset": 748,
+    "valid_stocks": 1734,
+    "gpu_streams": [
+      "/device:GPU:0/stream:13",
+      "/device:GPU:0/stream:14<MemcpyH2D>",
+      "/device:GPU:0/stream:15<MemcpyD2H>",
+      "/device:GPU:0/stream:all"
+    ],
+    "prediction_shape": [
+      1737,
+      1
+    ],
+    "finite": true
+  }
+}

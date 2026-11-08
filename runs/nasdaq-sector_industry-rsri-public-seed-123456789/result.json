@@ -1,0 +1,18 @@
+{
+  "manifest_sha256": "037842cbe2509486c1e77e847de03d41934ae560094cd71c87dbfef4f18e71e1",
+  "id": "nasdaq-sector_industry-rsri-public-seed-123456789",
+  "best_epoch": 26,
+  "best_validation_loss": 0.0004962478351011495,
+  "validation": {
+    "mse": 0.0004945657413285965,
+    "mrr": 0.0399152042725227,
+    "irr": 1.4955631281773094,
+    "author_btl": 2.4955631281773094
+  },
+  "test": {
+    "mse": 0.00038064102982894425,
+    "mrr": 0.03150385066622737,
+    "irr": 0.6889542338903993,
+    "author_btl": 1.6889542338903993
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "upstream_relation_archive_sha256": "f2acb9cb96fdc290f55904c46b680c6c7c5763a1ecd007102dada35ab16217be",
+  "markets": {
+    "NASDAQ": {
+      "stocks": 1026,
+      "source_rows": 1246,
+      "used_rows": 1245,
+      "ticker_sha256": "6c09c1437a3600c790c1cdc8402d678db86e1ad46375b5bc768414340895d9f0",
+      "eod_manifest_sha256": "100e8e70be02f348b644867d73409956bf84f7039fdd4b2cb41b2ff11c1d2466",
+      "missing_close_cells": 1728,
+      "relation_arrays": {
+        "sector_industry": {
+          "shape": [
+            1026,
+            1026,
+            97
+          ],
+          "dtype": "int64",
+          "sha256": "4838497b16fd6d900c4c93b12c6571cc24909ad3123377be062417a03d12e3fd",
+          "active_channels_including_self": 97,
+          "self_edges": 1026,
+          "off_diagonal_density": 0.05000332810345647,
+          "ticker_axis_checked_against_industry_groups": true,
+          "json_industry_groups": 113,
+          "non_singleton_groups": 96
+        },
+        "wikidata": {
+          "shape": [
+            1026,
+            1026,
+            43
+          ],
+          "dtype": "int64",
+          "sha256": "00b0df3a3fb387f451aa0466fa475651ad6d9b244c1bb9fa43209c28b5f24d40",
+          "active_channels_including_self": 43,
+          "self_edges": 1026,
+          "off_diagonal_density": 0.0018418675414824323
+        }
+      },
+      "split_dates": {
+        "train": [
+          "2013-01-02",
+          "2015-12-31",
+          756
+        ],
+        "valid": [
+          "2016-01-04",
+          "2016-12-30",
+          252
+        ],
+        "test": [
+          "2017-01-03",
+          "2017-12-08",
+          237
+        ]
+      }
+    },
+    "NYSE": {
+      "stocks": 1737,
+      "source_rows": 1245,
+      "used_rows": 1245,
+      "ticker_sha256": "fb14b5ef35894a1d7d8a80f3ba1c750c0a628c6e3d8d2c3e75dad2fc0dc11701",
+      "eod_manifest_sha256": "bf1ba44a24016b79f43272081477efe1c5004e364bc4d96552f2a9516737670c",
+      "missing_close_cells": 1389,
+      "relation_arrays": {
+        "sector_industry": {
+          "shape": [
+            1737,
+            1737,
+            108
+          ],
+          "dtype": "int64",
+          "sha256": "41ab68f29541e11e2acf0ec7df9ca68f9c22d8ebcca3bba64a8f128454d56883",
+          "active_channels_including_self": 108,
+          "self_edges": 1737,
+          "off_diagonal_density": 0.09365092630177035,
+          "ticker_axis_checked_against_industry_groups": true,
+          "json_industry_groups": 130,
+          "non_singleton_groups": 107
+        },
+        "wikidata": {
+          "shape": [
+            1737,
+            1737,
+            33
+          ],
+          "dtype": "int64",
+          "sha256": "42416de7aa3e2eb6d3ba546473d855344503ff9b34951f7269d579bcefd69c22",
+          "active_channels_including_self": 33,
+          "self_edges": 1737,
+          "off_diagonal_density": 0.0028082211769325256
+        }
+      },
+      "split_dates": {
+        "train": [
+          "2013-01-02",
+          "2015-12-31",
+          756
+        ],
+        "valid": [
+          "2016-01-04",
+          "2016-12-30",
+          252
+        ],
+        "test": [
+          "2017-01-03",
+          "2017-12-08",
+          237
+        ]
+      }
+    }
+  },
+  "pretrain": {
+    "status": "verified",
+    "archive_sha256": "205973c74fb15fa46f10c96f92280aa38bcee1d8067357ced3500223b846acd0",
+    "arrays": {
+      "NASDAQ_rank_lstm_seq-16_unit-64_2.csv.npy": {
+        "shape": [
+          1026,
+          1245,
+          64
+        ],
+        "dtype": "float32",
+        "sha256": "071a13ade269a50a5aa77bab152fe408b5ebb0ea2ff79aa73268c1720c4301b2"
+      },
+      "NYSE_rank_lstm_seq-8_unit-32_0.csv.npy": {
+        "shape": [
+          1737,
+          1245,
+          32
+        ],
+        "dtype": "float32",
+        "sha256": "c848999b2085d6fdabed1c30eb92454f929a54a1506b0e5a3718ad3d5917f6d8"
+      }
+    }
+  }
+}

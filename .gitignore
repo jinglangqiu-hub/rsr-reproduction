@@ -1,0 +1,54 @@
+# Python and local development files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.lock
+*.tmp
+*.part
+
+# Original downloads and the superseded checkout stay on this machine.
+/downloads/
+/original/
+/artifacts/
+/1809.09441v2.pdf
+
+# Author data are recovered from the pinned upstream submodule.
+/compat/data/*
+!/compat/data/README.md
+!/compat/data/*_tickers_qualify_*.csv
+!/compat/data/*_aver_line_dates.csv
+
+# Keep experiment provenance and logs in Git; binary outputs go in Releases.
+/runs/**
+!/runs/**/
+!/runs/**/*.json
+!/runs/**/*.log
+
+# Publish research evidence, not machine inventories or installation logs.
+/audit/*
+!/audit/source-manifest.json
+!/audit/author-data-verification.json
+!/audit/experiment-preflight.json
+!/audit/experiment-graph-preflight.json
+!/audit/experiment-matrix.csv
+!/audit/public-seed-validation.json
+!/audit/public-seed-comparison.json
+!/audit/public-seed-grid-forward.json
+!/audit/compat-forward.json
+!/audit/compat-forward-NASDAQ.json
+!/audit/compat-forward-NYSE.json
+!/audit/public-seed-batch-037842cbe250/
+
+# Temporary editor and OS artifacts
+*~
+*.swp

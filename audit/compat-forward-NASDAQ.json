@@ -1,0 +1,22 @@
+{
+  "optimizer_steps": 0,
+  "author_data_forward": {
+    "market": "NASDAQ",
+    "stocks": 1026,
+    "relation": "wikidata",
+    "embedding": "NASDAQ_rank_lstm_seq-16_unit-64_2.csv.npy",
+    "validation_offset": 740,
+    "valid_stocks": 1009,
+    "gpu_streams": [
+      "/device:GPU:0/stream:13",
+      "/device:GPU:0/stream:14<MemcpyH2D>",
+      "/device:GPU:0/stream:15<MemcpyD2H>",
+      "/device:GPU:0/stream:all"
+    ],
+    "prediction_shape": [
+      1026,
+      1
+    ],
+    "finite": true
+  }
+}

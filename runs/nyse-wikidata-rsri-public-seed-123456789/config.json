@@ -1,0 +1,33 @@
+{
+  "manifest_sha256": "037842cbe2509486c1e77e847de03d41934ae560094cd71c87dbfef4f18e71e1",
+  "run": {
+    "id": "nyse-wikidata-rsri-public-seed-123456789",
+    "configuration": "nyse-wikidata-rsri",
+    "stage": "author_seed",
+    "seed": 123456789
+  },
+  "configuration": {
+    "market": "NYSE",
+    "method": "RSR_I",
+    "relation": "wikidata",
+    "stocks": 1737,
+    "seq": 8,
+    "unit": 32,
+    "alpha": 10.0,
+    "lr": 0.001,
+    "steps": 1,
+    "epochs": 50,
+    "inner_prod": false,
+    "embedding": "NYSE_rank_lstm_seq-8_unit-32_0.csv.npy",
+    "ticker_file": "NYSE_tickers_qualify_dr-0.98_min-5_smooth.csv",
+    "eod_manifest_sha256": "bf1ba44a24016b79f43272081477efe1c5004e364bc4d96552f2a9516737670c",
+    "file_sha256": {
+      "NYSE_tickers_qualify_dr-0.98_min-5_smooth.csv": "fb14b5ef35894a1d7d8a80f3ba1c750c0a628c6e3d8d2c3e75dad2fc0dc11701",
+      "NYSE_aver_line_dates.csv": "2a883ed7238a42057b9259a85c9319f3a75699c39c31477559c6ac51b9aa3796",
+      "pretrain/NYSE_rank_lstm_seq-8_unit-32_0.csv.npy": "c848999b2085d6fdabed1c30eb92454f929a54a1506b0e5a3718ad3d5917f6d8",
+      "relation/wikidata/NYSE_wiki_relation.npy": "42416de7aa3e2eb6d3ba546473d855344503ff9b34951f7269d579bcefd69c22"
+    },
+    "parameter_provenance": "market_template",
+    "parameter_reference": "nyse-sector_industry-rsri"
+  }
+}

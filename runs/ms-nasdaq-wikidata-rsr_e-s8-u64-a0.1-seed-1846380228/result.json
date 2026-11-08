@@ -1,0 +1,21 @@
+{
+  "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+  "multiseed_plan_sha256": "3288e09cc9a42ed62cf888cda3286e0c54d2f2856d70751e07ef5f23da24bdf6",
+  "id": "ms-nasdaq-wikidata-rsr_e-s8-u64-a0.1-seed-1846380228",
+  "seed": 1846380228,
+  "best_epoch": 36,
+  "best_validation_loss": 0.0005142688390887564,
+  "validation": {
+    "mse": 0.0005121393416506068,
+    "mrr": 0.027523365939522024,
+    "irr": 0.5458677901769988,
+    "author_btl": 1.5458677901769988
+  },
+  "checkpoint": "best/epoch-36",
+  "test": {
+    "mse": 0.0007824029084331201,
+    "mrr": 0.02574032397672058,
+    "irr": -0.37237691471818835,
+    "author_btl": 0.6276230852818117
+  }
+}

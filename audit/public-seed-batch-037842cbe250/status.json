@@ -1,0 +1,54 @@
+{
+  "manifest_sha256": "037842cbe2509486c1e77e847de03d41934ae560094cd71c87dbfef4f18e71e1",
+  "status": "completed",
+  "runs": [
+    {
+      "id": "nasdaq-wikidata-rsri-public-seed-123456789",
+      "status": "completed",
+      "console_log": "nasdaq-wikidata-rsri-public-seed-123456789.log",
+      "result": "runs/nasdaq-wikidata-rsri-public-seed-123456789/result.json"
+    },
+    {
+      "id": "nyse-sector_industry-rsri-public-seed-123456789",
+      "status": "completed",
+      "console_log": "nyse-sector_industry-rsri-public-seed-123456789.log",
+      "result": "runs/nyse-sector_industry-rsri-public-seed-123456789/result.json"
+    },
+    {
+      "id": "nasdaq-wikidata-rsre-public-seed-123456789",
+      "status": "completed",
+      "console_log": "nasdaq-wikidata-rsre-public-seed-123456789.log",
+      "result": "runs/nasdaq-wikidata-rsre-public-seed-123456789/result.json"
+    },
+    {
+      "id": "nasdaq-sector_industry-rsri-public-seed-123456789",
+      "status": "completed",
+      "console_log": "nasdaq-sector_industry-rsri-public-seed-123456789.log",
+      "result": "runs/nasdaq-sector_industry-rsri-public-seed-123456789/result.json"
+    },
+    {
+      "id": "nasdaq-sector_industry-rsre-public-seed-123456789",
+      "status": "completed",
+      "console_log": "nasdaq-sector_industry-rsre-public-seed-123456789.log",
+      "result": "runs/nasdaq-sector_industry-rsre-public-seed-123456789/result.json"
+    },
+    {
+      "id": "nyse-wikidata-rsri-public-seed-123456789",
+      "status": "completed",
+      "console_log": "nyse-wikidata-rsri-public-seed-123456789.log",
+      "result": "runs/nyse-wikidata-rsri-public-seed-123456789/result.json"
+    },
+    {
+      "id": "nyse-wikidata-rsre-public-seed-123456789",
+      "status": "completed",
+      "console_log": "nyse-wikidata-rsre-public-seed-123456789.log",
+      "result": "runs/nyse-wikidata-rsre-public-seed-123456789/result.json"
+    },
+    {
+      "id": "nyse-sector_industry-rsre-public-seed-123456789",
+      "status": "completed",
+      "console_log": "nyse-sector_industry-rsre-public-seed-123456789.log",
+      "result": "runs/nyse-sector_industry-rsre-public-seed-123456789/result.json"
+    }
+  ]
+}

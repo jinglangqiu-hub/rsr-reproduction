@@ -1,0 +1,136 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793951229.883445   24995 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1793951229.994567   24995 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793951232.534065   24995 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING:tensorflow:From /home/luckythrower/.venvs/rsr-gpu/lib/python3.11/site-packages/tensorflow/python/compat/v2_compat.py:98: disable_resource_variables (from tensorflow.python.ops.resource_variables_toggle) is deprecated and will be removed in a future version.
+Instructions for updating:
+non-resource variables are not supported in the long term
+W0000 00:00:1793951233.895894   24995 gpu_device.cc:2459] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0a. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+{'run': {'id': 'hparam-nyse-s8-u32-a0.1-sector_industry-rsr_i', 'configuration': 'hparam-nyse-s8-u32-a0.1-sector_industry-rsr_i', 'seed': 123456789}, 'configuration': {'market': 'NYSE', 'seq': 8, 'unit': 32, 'lr': 0.001, 'steps': 1, 'epochs': 50, 'ticker_file': 'NYSE_tickers_qualify_dr-0.98_min-5_smooth.csv', 'stocks': 1737, 'batch': 4, 'axis': 'alpha', 'parameter_provenance': 'independent_search', 'stage': 'relation', 'alpha': 0.1, 'method': 'RSR_I', 'relation': 'sector_industry', 'inner_prod': False, 'embedding_run': 'hparam-nyse-s8-u32-rank-lstm'}}
+relation encoding shape: (1737, 1737, 108)
+device name: /gpu:0
+/home/luckythrower/.venvs/rsr-gpu/lib/python3.11/site-packages/tensorflow/python/keras/legacy_tf_layers/core.py:164: UserWarning: `tf.layers.dense` is deprecated and will be removed in a future version. Please use `tf.keras.layers.Dense` instead.
+  warnings.warn('`tf.layers.dense` is deprecated and '
+/home/luckythrower/.venvs/rsr-gpu/lib/python3.11/site-packages/tensorflow/python/keras/engine/base_layer_v1.py:1694: UserWarning: `layer.apply` is deprecated and will be removed in a future version. Please use `layer.__call__` method instead.
+  warnings.warn('`layer.apply` is deprecated and '
+sum weight
+WARNING:tensorflow:From /home/luckythrower/.venvs/rsr-gpu/lib/python3.11/site-packages/tensorflow/python/util/dispatch.py:1264: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+W0000 00:00:1793951276.047459   24995 gpu_device.cc:2459] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0a. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+I0000 00:00:1793951276.538848   24995 gpu_device.cc:2043] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 9226 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 5070 Ti Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 12.0a
+I0000 00:00:1793951276.658420   24995 mlir_graph_optimization_pass.cc:437] MLIR V1 optimization pass is not enabled
+Train Loss: 0.09940762251365388 0.09935782218392863 0.000498004590305779
+Valid MSE: 0.012076606600737524 0.01201155614514377 0.0006505047363928512
+Valid performance: {'mse': 0.012012663134925512, 'mrrt': 0.02296396321882978, 'btl': 1.846479890140472}
+Better valid loss: 0.012076606600737524
+epoch: 0 time: 21.4743
+Train Loss: 0.0012718723948440841 0.0012546654045739135 0.00017206992923437045
+Valid MSE: 0.0032827614447183255 0.003244887685887368 0.00037873760014744696
+Valid performance: {'mse': 0.0032448921618057755, 'mrrt': 0.026440923326020004, 'btl': 1.7166687130229548}
+Better valid loss: 0.0032827614447183255
+epoch: 1 time: 12.6807
+Train Loss: 0.0006533731590025127 0.0006399356302879184 0.0001343752908920775
+Valid MSE: 0.002007005332473902 0.0019771747331741073 0.0002983059980218217
+Valid performance: {'mse': 0.0019772334591491424, 'mrrt': 0.021411035433694804, 'btl': 1.8126544148954054}
+Better valid loss: 0.002007005332473902
+epoch: 2 time: 12.4379
+Train Loss: 0.0004908084556715235 0.0004803797734132024 0.0001042868261966096
+Valid MSE: 0.0014999436153586778 0.001475987907190482 0.0002395570838762935
+Valid performance: {'mse': 0.0014761222936497081, 'mrrt': 0.017070056156630955, 'btl': 1.2959073258944045}
+Better valid loss: 0.0014999436153586778
+epoch: 3 time: 12.6946
+Train Loss: 0.00041887751307316453 0.0004104359074837113 8.441606181362216e-05
+Valid MSE: 0.0012551146947006354 0.0012349978469068273 0.00020116846661992547
+Valid performance: {'mse': 0.0012351637069378716, 'mrrt': 0.011175446762618751, 'btl': 0.9998228422746251}
+Better valid loss: 0.0012551146947006354
+epoch: 4 time: 12.4652
+Train Loss: 0.0003771987074877551 0.0003701035465456772 7.095161305629959e-05
+Valid MSE: 0.0010328976782075765 0.0010153682593400369 0.00017529419257323117
+Valid performance: {'mse': 0.0010155192441687055, 'mrrt': 0.01100859994668576, 'btl': 0.9276663839409593}
+Better valid loss: 0.0010328976782075765
+epoch: 5 time: 12.5867
+Train Loss: 0.00034185117816574545 0.00033589370138321787 5.957476208071033e-05
+Valid MSE: 0.0008276934232627456 0.0008132061922214999 0.00014487233169174508
+Valid performance: {'mse': 0.000813314366138187, 'mrrt': 0.01145709129661803, 'btl': 1.1259158756001852}
+Better valid loss: 0.0008276934232627456
+epoch: 6 time: 12.3238
+Train Loss: 0.00031483603004842835 0.00030997372095707514 4.862309460558872e-05
+Valid MSE: 0.0006649990539280845 0.0006531463326869666 0.00011852721407136876
+Valid performance: {'mse': 0.0006532076656084, 'mrrt': 0.01280807391106255, 'btl': 1.1877047067391686}
+Better valid loss: 0.0006649990539280845
+epoch: 7 time: 12.5462
+Train Loss: 0.0002954388322757802 0.0002914876497261748 3.9511821983437955e-05
+Valid MSE: 0.0006201479541015855 0.0006101691772253992 9.97877702776884e-05
+Valid performance: {'mse': 0.0006102104115098522, 'mrrt': 0.01645468703967056, 'btl': 1.273920469917357}
+Better valid loss: 0.0006201479541015855
+epoch: 8 time: 12.3978
+Train Loss: 0.00028797589447758336 0.00028467780499045765 3.298089434276728e-05
+Valid MSE: 0.0004901761231950433 0.00048203151995299516 8.144602254596686e-05
+Valid performance: {'mse': 0.0004820637693055335, 'mrrt': 0.01975028198761102, 'btl': 1.7571678649983369}
+Better valid loss: 0.0004901761231950433
+epoch: 9 time: 12.4095
+Train Loss: 0.0002875069447819024 0.000284665608066732 2.841337077247649e-05
+Valid MSE: 0.0005058049091386483 0.0004985216066762362 7.28330343542713e-05
+Valid performance: {'mse': 0.0004985572043714969, 'mrrt': 0.02263992838719384, 'btl': 1.9188575972802937}
+epoch: 10 time: 12.9326
+Train Loss: 0.0002819105200123394 0.0002793702629050303 2.540257333330865e-05
+Valid MSE: 0.00045268482882954505 0.0004462610917731321 6.423737417323522e-05
+Valid performance: {'mse': 0.0004463042067254934, 'mrrt': 0.023546586047740976, 'btl': 2.311824140197132}
+Better valid loss: 0.00045268482882954505
+epoch: 11 time: 12.9897
+Train Loss: 0.0002781686138651158 0.000275850318566144 2.318295536792288e-05
+Valid MSE: 0.0005072434500944505 0.0005012872371437316 5.9562140709853596e-05
+Valid performance: {'mse': 0.0005013334948970223, 'mrrt': 0.0263565466579192, 'btl': 2.2911111967405304}
+epoch: 12 time: 12.3963
+Train Loss: 0.00028174045529905583 0.00027957121747022027 2.1692383517949713e-05
+Valid MSE: 0.00043630964789790884 0.00043043066611899697 5.87898046952822e-05
+Valid performance: {'mse': 0.00043048098803349797, 'mrrt': 0.03510826521696831, 'btl': 2.490688609541394}
+Better valid loss: 0.00043630964789790884
+epoch: 13 time: 12.6493
+Train Loss: 0.000281753388471033 0.00027966966787258766 2.083720524702536e-05
+Valid MSE: 0.00042521046981121237 0.00041967225513958725 5.5382152021636666e-05
+Valid performance: {'mse': 0.0004197222611188612, 'mrrt': 0.03242390131466133, 'btl': 2.3494451835285872}
+Better valid loss: 0.00042521046981121237
+epoch: 14 time: 12.3674
+Train Loss: 0.00027949803308630994 0.0002775068756474522 1.9911573010815757e-05
+Valid MSE: 0.0004379719545203631 0.00043264754911808903 5.324406135644365e-05
+Valid performance: {'mse': 0.0004326985968079037, 'mrrt': 0.03871452007609858, 'btl': 2.730333761777729}
+epoch: 15 time: 12.4312
+Train Loss: 0.0002794645490212133 0.00027757754476231245 1.8870043706826706e-05
+Valid MSE: 0.0004230096074891099 0.00041795307408883385 5.056533720764694e-05
+Valid performance: {'mse': 0.0004180045495077615, 'mrrt': 0.02840806935714984, 'btl': 2.0291139236069284}
+Better valid loss: 0.0004230096074891099
+epoch: 16 time: 12.4413
+Train Loss: 0.0002750687985295568 0.00027321131107070157 1.8574879904180478e-05
+Valid MSE: 0.00042607486737699854 0.0004210898290376275 4.985038009498755e-05
+Valid performance: {'mse': 0.00042114154307359796, 'mrrt': 0.03203648722389355, 'btl': 2.292825140291825}
+epoch: 17 time: 12.6382
+Train Loss: 0.00027886577340108785 0.00027710844414950524 1.7573296357826425e-05
+Valid MSE: 0.00040633147416104166 0.0004016044519616232 4.7270233781524616e-05
+Valid performance: {'mse': 0.0004016573271756051, 'mrrt': 0.02481794628615632, 'btl': 2.045214672398288}
+Better valid loss: 0.00040633147416104166
+epoch: 18 time: 11.8322
+Train Loss: 0.000279695462951487 0.00027798688824003803 1.7085748239682094e-05
+Valid MSE: 0.00040981522149180933 0.00040523473961955113 4.58048216603943e-05
+Valid performance: {'mse': 0.00040528705572711216, 'mrrt': 0.0362603366481871, 'btl': 2.7423729792935774}
+epoch: 19 time: 12.4968
+Train Loss: 0.0002811366013653193 0.00027945199531009043 1.6846061025471254e-05
+Valid MSE: 0.00043942540587667034 0.00043497628264179056 4.4491234665844195e-05
+Valid performance: {'mse': 0.0004350301709959803, 'mrrt': 0.03743792435176085, 'btl': 2.5806446939823218}
+epoch: 20 time: 12.4154
+Train Loss: 0.00028146374392530853 0.00027984558532684664 1.6181589912653058e-05
+Valid MSE: 0.00040133448800631975 0.00039706578161077767 4.268706043293359e-05
+Valid performance: {'mse': 0.0003971192110393742, 'mrrt': 0.029562615956950884, 'btl': 2.254460953583475}
+Better valid loss: 0.00040133448800631975
+epoch: 21 time: 12.5728
+Train Loss: 0.0002710643677395687 0.0002694812393471964 1.5831288754491873e-05
+Valid MSE: 0.0004105638932771168 0.00040656831218271577 3.9955818032294267e-05
+Valid performance: {'mse': 0.0004066228816519955, 'mrrt': 0.026745891113568704, 'btl': 1.8892438971088268}
+epoch: 22 time: 12.6363
+Train Loss: 0.0002788938642019324 0.00027733892441304033 1.554939286764951e-05
+Valid MSE: 0.0004514198913562319 0.0004470224240134167 4.3974676531982524e-05
+Valid performance: {'mse': 0.0004470771093269886, 'mrrt': 0.03071566400371344, 'btl': 2.0513363883947022}
+epoch: 23 time: 11.9967

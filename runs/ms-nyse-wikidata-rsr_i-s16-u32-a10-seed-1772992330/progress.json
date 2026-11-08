@@ -1,0 +1,21 @@
+{
+  "multiseed_plan_sha256": "3288e09cc9a42ed62cf888cda3286e0c54d2f2856d70751e07ef5f23da24bdf6",
+  "completed_epochs": 50,
+  "best": {
+    "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+    "multiseed_plan_sha256": "3288e09cc9a42ed62cf888cda3286e0c54d2f2856d70751e07ef5f23da24bdf6",
+    "id": "ms-nyse-wikidata-rsr_i-s16-u32-a10-seed-1772992330",
+    "seed": 1772992330,
+    "best_epoch": 43,
+    "best_validation_loss": 0.0004744235969459017,
+    "validation": {
+      "mse": 0.00037054272633997495,
+      "mrr": 0.04459351631336996,
+      "irr": 0.8647154507052619,
+      "author_btl": 1.864715450705262
+    }
+  },
+  "log_offset": 15148,
+  "latest_checkpoint": "latest/epoch-50",
+  "best_checkpoint": "best/epoch-43"
+}

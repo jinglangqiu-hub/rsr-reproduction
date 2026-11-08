@@ -1,0 +1,21 @@
+{
+  "multiseed_plan_sha256": "3288e09cc9a42ed62cf888cda3286e0c54d2f2856d70751e07ef5f23da24bdf6",
+  "completed_epochs": 50,
+  "best": {
+    "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+    "multiseed_plan_sha256": "3288e09cc9a42ed62cf888cda3286e0c54d2f2856d70751e07ef5f23da24bdf6",
+    "id": "ms-nasdaq-s8-u64-seed-20885008-rank-lstm",
+    "seed": 20885008,
+    "best_epoch": 37,
+    "best_validation_loss": 0.000503855336564667,
+    "validation": {
+      "mse": 0.0004952170766810158,
+      "mrr": 0.029814024020670172,
+      "irr": 1.9261706499673892,
+      "author_btl": 2.926170649967389
+    }
+  },
+  "log_offset": 14869,
+  "latest_checkpoint": "latest/epoch-50",
+  "best_checkpoint": "best/epoch-37"
+}

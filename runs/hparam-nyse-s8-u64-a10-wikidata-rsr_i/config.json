@@ -1,0 +1,27 @@
+{
+  "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+  "run": {
+    "id": "hparam-nyse-s8-u64-a10-wikidata-rsr_i",
+    "configuration": "hparam-nyse-s8-u64-a10-wikidata-rsr_i",
+    "seed": 123456789
+  },
+  "configuration": {
+    "market": "NYSE",
+    "seq": 8,
+    "unit": 64,
+    "lr": 0.001,
+    "steps": 1,
+    "epochs": 50,
+    "ticker_file": "NYSE_tickers_qualify_dr-0.98_min-5_smooth.csv",
+    "stocks": 1737,
+    "batch": 3,
+    "axis": "unit",
+    "parameter_provenance": "independent_search",
+    "stage": "relation",
+    "alpha": 10,
+    "method": "RSR_I",
+    "relation": "wikidata",
+    "inner_prod": false,
+    "embedding_run": "hparam-nyse-s8-u64-rank-lstm"
+  }
+}

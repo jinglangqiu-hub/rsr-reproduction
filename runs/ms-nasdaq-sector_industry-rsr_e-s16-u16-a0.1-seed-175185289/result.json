@@ -1,0 +1,21 @@
+{
+  "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+  "multiseed_plan_sha256": "3288e09cc9a42ed62cf888cda3286e0c54d2f2856d70751e07ef5f23da24bdf6",
+  "id": "ms-nasdaq-sector_industry-rsr_e-s16-u16-a0.1-seed-175185289",
+  "seed": 175185289,
+  "best_epoch": 49,
+  "best_validation_loss": 0.000531449887184574,
+  "validation": {
+    "mse": 0.0005265661387360073,
+    "mrr": 0.04059544902915398,
+    "irr": 2.0214720002841204,
+    "author_btl": 3.0214720002841204
+  },
+  "checkpoint": "best/epoch-49",
+  "test": {
+    "mse": 0.0006797178866719368,
+    "mrr": 0.04361015999957392,
+    "irr": 0.2665617922320962,
+    "author_btl": 1.2665617922320962
+  }
+}

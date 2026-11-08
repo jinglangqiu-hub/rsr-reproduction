@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "batch": 5,
+  "plan_sha256": "f748661d66903f3a510086c50b74a184db5ef361055623bacbaa32993aa4ff79",
+  "active": null,
+  "completed": [
+    "hparam-nasdaq-s8-u128-rank-lstm",
+    "hparam-nasdaq-s8-u128-a10-wikidata-rsr_i",
+    "hparam-nasdaq-s8-u32-rank-lstm",
+    "hparam-nasdaq-s8-u32-a10-wikidata-rsr_e",
+    "hparam-nasdaq-s8-u32-a10-sector_industry-rsr_i",
+    "hparam-nasdaq-s4-u16-rank-lstm",
+    "hparam-nasdaq-s4-u16-a10-sector_industry-rsr_e",
+    "hparam-nyse-s4-u128-rank-lstm",
+    "hparam-nyse-s4-u128-a10-sector_industry-rsr_i",
+    "hparam-nyse-s16-u32-a1-wikidata-rsr_e"
+  ]
+}

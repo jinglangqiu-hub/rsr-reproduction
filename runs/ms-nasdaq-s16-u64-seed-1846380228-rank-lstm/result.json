@@ -1,0 +1,25 @@
+{
+  "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+  "multiseed_plan_sha256": "3288e09cc9a42ed62cf888cda3286e0c54d2f2856d70751e07ef5f23da24bdf6",
+  "id": "ms-nasdaq-s16-u64-seed-1846380228-rank-lstm",
+  "seed": 1846380228,
+  "best_epoch": 47,
+  "best_validation_loss": 0.0005083787321974154,
+  "validation": {
+    "mse": 0.0004995201892473703,
+    "mrr": 0.02450049437028724,
+    "irr": 1.4915278449188918,
+    "author_btl": 2.491527844918892
+  },
+  "checkpoint": "best/epoch-47",
+  "embedding_shape": [
+    1026,
+    992,
+    64
+  ],
+  "test_embedding_shape": [
+    1026,
+    237,
+    64
+  ]
+}

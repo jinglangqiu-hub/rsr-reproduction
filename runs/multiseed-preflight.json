@@ -1,0 +1,7 @@
+{
+  "multiseed_plan_sha256": "3288e09cc9a42ed62cf888cda3286e0c54d2f2856d70751e07ef5f23da24bdf6",
+  "optimizer_steps_executed": 0,
+  "encoder_fits": 30,
+  "rsr_fits": 40,
+  "verified_input_hashes": true
+}

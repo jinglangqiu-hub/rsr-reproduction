@@ -1,0 +1,305 @@
+{
+  "manifest_sha256": "b61890a6f47d809ec437616aef3a05cb6ecfe70e2348a33b75e1564b02da38cd",
+  "test_first": "2017-01-03",
+  "test_last": "2017-12-08",
+  "test_days": 237,
+  "optimizer_steps_executed": 0,
+  "runs": [
+    {
+      "manifest_sha256": "b61890a6f47d809ec437616aef3a05cb6ecfe70e2348a33b75e1564b02da38cd",
+      "id": "hparam-nasdaq-s8-u64-a0.1-wikidata-rsr_i",
+      "configuration": {
+        "market": "NASDAQ",
+        "seq": 8,
+        "unit": 64,
+        "lr": 0.001,
+        "steps": 1,
+        "epochs": 50,
+        "ticker_file": "NASDAQ_tickers_qualify_dr-0.98_min-5_smooth.csv",
+        "stocks": 1026,
+        "batch": 2,
+        "axis": "seq",
+        "parameter_provenance": "independent_search",
+        "stage": "relation",
+        "alpha": 0.1,
+        "method": "RSR_I",
+        "relation": "wikidata",
+        "inner_prod": false,
+        "embedding_run": "hparam-nasdaq-s8-u64-rank-lstm"
+      },
+      "best_epoch": 32,
+      "validation": {
+        "mse": 0.0004947207214364347,
+        "mrr": 0.04604584234683504,
+        "irr": 2.2762703609769233,
+        "author_btl": 3.2762703609769233
+      },
+      "test": {
+        "mse": 0.0004776785674074125,
+        "mrr": 0.035986033969072295,
+        "irr": 0.40380641288356856,
+        "author_btl": 1.4038064128835686
+      },
+      "optimizer_steps_executed": 0
+    },
+    {
+      "manifest_sha256": "b61890a6f47d809ec437616aef3a05cb6ecfe70e2348a33b75e1564b02da38cd",
+      "id": "hparam-nasdaq-s8-u64-a0.1-wikidata-rsr_e",
+      "configuration": {
+        "market": "NASDAQ",
+        "seq": 8,
+        "unit": 64,
+        "lr": 0.001,
+        "steps": 1,
+        "epochs": 50,
+        "ticker_file": "NASDAQ_tickers_qualify_dr-0.98_min-5_smooth.csv",
+        "stocks": 1026,
+        "batch": 2,
+        "axis": "seq",
+        "parameter_provenance": "independent_search",
+        "stage": "relation",
+        "alpha": 0.1,
+        "method": "RSR_E",
+        "relation": "wikidata",
+        "inner_prod": true,
+        "embedding_run": "hparam-nasdaq-s8-u64-rank-lstm"
+      },
+      "best_epoch": 42,
+      "validation": {
+        "mse": 0.0004962769114211064,
+        "mrr": 0.03784236456198695,
+        "irr": 1.7736592763685621,
+        "author_btl": 2.773659276368562
+      },
+      "test": {
+        "mse": 0.000480668185609643,
+        "mrr": 0.03583277641437328,
+        "irr": 1.1669358737417497,
+        "author_btl": 2.1669358737417497
+      },
+      "optimizer_steps_executed": 0
+    },
+    {
+      "manifest_sha256": "b61890a6f47d809ec437616aef3a05cb6ecfe70e2348a33b75e1564b02da38cd",
+      "id": "hparam-nasdaq-s16-u64-a10-sector_industry-rsr_i",
+      "configuration": {
+        "market": "NASDAQ",
+        "seq": 16,
+        "unit": 64,
+        "lr": 0.001,
+        "steps": 1,
+        "epochs": 50,
+        "ticker_file": "NASDAQ_tickers_qualify_dr-0.98_min-5_smooth.csv",
+        "stocks": 1026,
+        "batch": 4,
+        "axis": "alpha",
+        "parameter_provenance": "independent_search",
+        "stage": "relation",
+        "alpha": 10,
+        "method": "RSR_I",
+        "relation": "sector_industry",
+        "inner_prod": false,
+        "embedding_run": "hparam-nasdaq-s16-u64-rank-lstm"
+      },
+      "best_epoch": 46,
+      "validation": {
+        "mse": 0.0005085990418053307,
+        "mrr": 0.03829095684233793,
+        "irr": 1.5767555518832523,
+        "author_btl": 2.5767555518832523
+      },
+      "test": {
+        "mse": 0.000808886102025373,
+        "mrr": 0.024681090229143443,
+        "irr": 0.6989952629082836,
+        "author_btl": 1.6989952629082836
+      },
+      "optimizer_steps_executed": 0
+    },
+    {
+      "manifest_sha256": "b61890a6f47d809ec437616aef3a05cb6ecfe70e2348a33b75e1564b02da38cd",
+      "id": "hparam-nasdaq-s16-u16-a0.1-sector_industry-rsr_e",
+      "configuration": {
+        "market": "NASDAQ",
+        "seq": 16,
+        "unit": 16,
+        "lr": 0.001,
+        "steps": 1,
+        "epochs": 50,
+        "ticker_file": "NASDAQ_tickers_qualify_dr-0.98_min-5_smooth.csv",
+        "stocks": 1026,
+        "batch": 3,
+        "axis": "unit",
+        "parameter_provenance": "independent_search",
+        "stage": "relation",
+        "alpha": 0.1,
+        "method": "RSR_E",
+        "relation": "sector_industry",
+        "inner_prod": true,
+        "embedding_run": "hparam-nasdaq-s16-u16-rank-lstm"
+      },
+      "best_epoch": 49,
+      "validation": {
+        "mse": 0.0005173131046579635,
+        "mrr": 0.034001643903454094,
+        "irr": 2.163585033180425,
+        "author_btl": 3.163585033180425
+      },
+      "test": {
+        "mse": 0.0005923320404823267,
+        "mrr": 0.009990851064142676,
+        "irr": 0.21863887357176282,
+        "author_btl": 1.2186388735717628
+      },
+      "optimizer_steps_executed": 0
+    },
+    {
+      "manifest_sha256": "b61890a6f47d809ec437616aef3a05cb6ecfe70e2348a33b75e1564b02da38cd",
+      "id": "hparam-nyse-s4-u32-a10-sector_industry-rsr_i",
+      "configuration": {
+        "market": "NYSE",
+        "seq": 4,
+        "unit": 32,
+        "lr": 0.001,
+        "steps": 1,
+        "epochs": 50,
+        "ticker_file": "NYSE_tickers_qualify_dr-0.98_min-5_smooth.csv",
+        "stocks": 1737,
+        "batch": 2,
+        "axis": "seq",
+        "parameter_provenance": "independent_search",
+        "stage": "relation",
+        "alpha": 10,
+        "method": "RSR_I",
+        "relation": "sector_industry",
+        "inner_prod": false,
+        "embedding_run": "hparam-nyse-s4-u32-rank-lstm"
+      },
+      "best_epoch": 44,
+      "validation": {
+        "mse": 0.0003673182955390791,
+        "mrr": 0.053106005370727107,
+        "irr": 2.1824523664836306,
+        "author_btl": 3.1824523664836306
+      },
+      "test": {
+        "mse": 0.00022953729880137788,
+        "mrr": 0.05582296780011039,
+        "irr": 1.781928069278365,
+        "author_btl": 2.781928069278365
+      },
+      "optimizer_steps_executed": 0
+    },
+    {
+      "manifest_sha256": "b61890a6f47d809ec437616aef3a05cb6ecfe70e2348a33b75e1564b02da38cd",
+      "id": "hparam-nyse-s16-u32-a10-wikidata-rsr_i",
+      "configuration": {
+        "market": "NYSE",
+        "seq": 16,
+        "unit": 32,
+        "lr": 0.001,
+        "steps": 1,
+        "epochs": 50,
+        "ticker_file": "NYSE_tickers_qualify_dr-0.98_min-5_smooth.csv",
+        "stocks": 1737,
+        "batch": 2,
+        "axis": "seq",
+        "parameter_provenance": "independent_search",
+        "stage": "relation",
+        "alpha": 10,
+        "method": "RSR_I",
+        "relation": "wikidata",
+        "inner_prod": false,
+        "embedding_run": "hparam-nyse-s16-u32-rank-lstm"
+      },
+      "best_epoch": 44,
+      "validation": {
+        "mse": 0.00036578515543951297,
+        "mrr": 0.05338833364349921,
+        "irr": 1.3795981667353772,
+        "author_btl": 2.379598166735377
+      },
+      "test": {
+        "mse": 0.00024764348805252746,
+        "mrr": 0.04446690182899724,
+        "irr": 0.336343888862757,
+        "author_btl": 1.336343888862757
+      },
+      "optimizer_steps_executed": 0
+    },
+    {
+      "manifest_sha256": "b61890a6f47d809ec437616aef3a05cb6ecfe70e2348a33b75e1564b02da38cd",
+      "id": "hparam-nyse-s8-u32-a1-wikidata-rsr_e",
+      "configuration": {
+        "market": "NYSE",
+        "seq": 8,
+        "unit": 32,
+        "lr": 0.001,
+        "steps": 1,
+        "epochs": 50,
+        "ticker_file": "NYSE_tickers_qualify_dr-0.98_min-5_smooth.csv",
+        "stocks": 1737,
+        "batch": 4,
+        "axis": "alpha",
+        "parameter_provenance": "independent_search",
+        "stage": "relation",
+        "alpha": 1,
+        "method": "RSR_E",
+        "relation": "wikidata",
+        "inner_prod": true,
+        "embedding_run": "hparam-nyse-s8-u32-rank-lstm"
+      },
+      "best_epoch": 46,
+      "validation": {
+        "mse": 0.00037102535224997916,
+        "mrr": 0.06881488992255869,
+        "irr": 2.2359743105480447,
+        "author_btl": 3.2359743105480447
+      },
+      "test": {
+        "mse": 0.00032049430642926667,
+        "mrr": 0.05873437819170609,
+        "irr": 1.7458597749646287,
+        "author_btl": 2.7458597749646287
+      },
+      "optimizer_steps_executed": 0
+    },
+    {
+      "manifest_sha256": "b61890a6f47d809ec437616aef3a05cb6ecfe70e2348a33b75e1564b02da38cd",
+      "id": "hparam-nyse-s16-u32-a10-sector_industry-rsr_e",
+      "configuration": {
+        "market": "NYSE",
+        "seq": 16,
+        "unit": 32,
+        "lr": 0.001,
+        "steps": 1,
+        "epochs": 50,
+        "ticker_file": "NYSE_tickers_qualify_dr-0.98_min-5_smooth.csv",
+        "stocks": 1737,
+        "batch": 2,
+        "axis": "seq",
+        "parameter_provenance": "independent_search",
+        "stage": "relation",
+        "alpha": 10,
+        "method": "RSR_E",
+        "relation": "sector_industry",
+        "inner_prod": true,
+        "embedding_run": "hparam-nyse-s16-u32-rank-lstm"
+      },
+      "best_epoch": 35,
+      "validation": {
+        "mse": 0.00036665145484204886,
+        "mrr": 0.05150358548584412,
+        "irr": 1.7636298525030725,
+        "author_btl": 2.7636298525030725
+      },
+      "test": {
+        "mse": 0.00024421053802107005,
+        "mrr": 0.009265931763782658,
+        "irr": -0.06002292159246281,
+        "author_btl": 0.9399770784075372
+      },
+      "optimizer_steps_executed": 0
+    }
+  ]
+}

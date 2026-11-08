@@ -1,0 +1,26 @@
+{
+  "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+  "run": {
+    "id": "hparam-nyse-s4-u32-rank-lstm",
+    "configuration": "hparam-nyse-s4-u32-rank-lstm",
+    "seed": 123456789
+  },
+  "configuration": {
+    "market": "NYSE",
+    "seq": 4,
+    "unit": 32,
+    "lr": 0.001,
+    "steps": 1,
+    "epochs": 50,
+    "ticker_file": "NYSE_tickers_qualify_dr-0.98_min-5_smooth.csv",
+    "stocks": 1737,
+    "batch": 2,
+    "axis": "seq",
+    "parameter_provenance": "independent_search",
+    "stage": "embedding",
+    "alpha": 1,
+    "method": "Rank_LSTM",
+    "relation": null,
+    "inner_prod": null
+  }
+}

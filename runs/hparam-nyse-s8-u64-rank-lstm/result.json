@@ -1,0 +1,17 @@
+{
+  "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+  "id": "hparam-nyse-s8-u64-rank-lstm",
+  "best_epoch": 23,
+  "best_validation_loss": 0.0003793696473694004,
+  "validation": {
+    "mse": 0.0003674622759609373,
+    "mrr": 0.05333659201577461,
+    "irr": 1.4483183135744184,
+    "author_btl": 2.4483183135744184
+  },
+  "embedding_shape": [
+    1737,
+    1000,
+    64
+  ]
+}

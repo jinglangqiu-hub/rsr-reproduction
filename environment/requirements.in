@@ -1,0 +1,10 @@
+# WSL2/Linux, Python 3.11. See requirements.lock.txt after GPU acceptance.
+tensorflow[and-cuda]==2.21.0
+numpy==1.26.4
+scipy==1.13.1
+scikit-learn==1.5.2
+# Blackwell requires modern CUDA libraries; do not resolve to TF's older minima.
+nvidia-cuda-runtime-cu12>=12.8,<13
+nvidia-cuda-nvcc-cu12>=12.8,<13
+nvidia-cublas-cu12>=12.8,<13
+nvidia-cudnn-cu12>=9.8,<10

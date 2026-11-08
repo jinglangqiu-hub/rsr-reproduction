@@ -1,0 +1,620 @@
+[
+  {
+    "market": "NASDAQ",
+    "relation": "wikidata",
+    "method": "RSR_I",
+    "baseline": {
+      "id": "hparam-nasdaq-s16-u64-a0.1-wikidata-rsr_i",
+      "axis": "baseline",
+      "parameters": {
+        "seq": 16,
+        "unit": 64,
+        "alpha": 0.1
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 30,
+      "best_validation_loss": 0.0005035758530582479,
+      "validation": {
+        "mse": 0.000501493774725474,
+        "mrr": 0.02658563527103505,
+        "irr": 0.3271814111794811,
+        "author_btl": 1.327181411179481
+      }
+    },
+    "best_observed": {
+      "id": "hparam-nasdaq-s8-u64-a0.1-wikidata-rsr_i",
+      "axis": "seq",
+      "parameters": {
+        "seq": 8,
+        "unit": 64,
+        "alpha": 0.1
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 32,
+      "best_validation_loss": 0.0004959633664088508,
+      "validation": {
+        "mse": 0.0004947207214364347,
+        "mrr": 0.04604584234683504,
+        "irr": 2.2762703609769233,
+        "author_btl": 3.2762703609769233
+      }
+    },
+    "combination": {
+      "parameters": {
+        "seq": 8,
+        "unit": 128,
+        "alpha": 10
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "id": "hparam-nasdaq-s8-u128-a10-wikidata-rsr_i",
+      "best_epoch": 47,
+      "best_validation_loss": 0.0005943642140159176,
+      "validation": {
+        "mse": 0.0004994351224104645,
+        "mrr": 0.02666732036426294,
+        "irr": 1.8075638869195245,
+        "author_btl": 2.8075638869195245
+      }
+    },
+    "combination_run_in_batch_5": true,
+    "selected": {
+      "id": "hparam-nasdaq-s8-u64-a0.1-wikidata-rsr_i",
+      "axis": "seq",
+      "parameters": {
+        "seq": 8,
+        "unit": 64,
+        "alpha": 0.1
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 32,
+      "best_validation_loss": 0.0004959633664088508,
+      "validation": {
+        "mse": 0.0004947207214364347,
+        "mrr": 0.04604584234683504,
+        "irr": 2.2762703609769233,
+        "author_btl": 3.2762703609769233
+      }
+    }
+  },
+  {
+    "market": "NASDAQ",
+    "relation": "wikidata",
+    "method": "RSR_E",
+    "baseline": {
+      "id": "hparam-nasdaq-s16-u64-a0.1-wikidata-rsr_e",
+      "axis": "baseline",
+      "parameters": {
+        "seq": 16,
+        "unit": 64,
+        "alpha": 0.1
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 50,
+      "best_validation_loss": 0.0005237293844979759,
+      "validation": {
+        "mse": 0.0005208318478509071,
+        "mrr": 0.026254292216269258,
+        "irr": 1.0212508938275278,
+        "author_btl": 2.0212508938275278
+      }
+    },
+    "best_observed": {
+      "id": "hparam-nasdaq-s8-u64-a0.1-wikidata-rsr_e",
+      "axis": "seq",
+      "parameters": {
+        "seq": 8,
+        "unit": 64,
+        "alpha": 0.1
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 42,
+      "best_validation_loss": 0.0004978787801519502,
+      "validation": {
+        "mse": 0.0004962769114211064,
+        "mrr": 0.03784236456198695,
+        "irr": 1.7736592763685621,
+        "author_btl": 2.773659276368562
+      }
+    },
+    "combination": {
+      "parameters": {
+        "seq": 8,
+        "unit": 32,
+        "alpha": 10
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "id": "hparam-nasdaq-s8-u32-a10-wikidata-rsr_e",
+      "best_epoch": 46,
+      "best_validation_loss": 0.0006349402166152787,
+      "validation": {
+        "mse": 0.000511237498335304,
+        "mrr": 0.034988131534957195,
+        "irr": 1.2506495590496343,
+        "author_btl": 2.2506495590496343
+      }
+    },
+    "combination_run_in_batch_5": true,
+    "selected": {
+      "id": "hparam-nasdaq-s8-u64-a0.1-wikidata-rsr_e",
+      "axis": "seq",
+      "parameters": {
+        "seq": 8,
+        "unit": 64,
+        "alpha": 0.1
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 42,
+      "best_validation_loss": 0.0004978787801519502,
+      "validation": {
+        "mse": 0.0004962769114211064,
+        "mrr": 0.03784236456198695,
+        "irr": 1.7736592763685621,
+        "author_btl": 2.773659276368562
+      }
+    }
+  },
+  {
+    "market": "NASDAQ",
+    "relation": "sector_industry",
+    "method": "RSR_I",
+    "baseline": {
+      "id": "hparam-nasdaq-s16-u64-a0.1-sector_industry-rsr_i",
+      "axis": "baseline",
+      "parameters": {
+        "seq": 16,
+        "unit": 64,
+        "alpha": 0.1
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 44,
+      "best_validation_loss": 0.0005142756044011866,
+      "validation": {
+        "mse": 0.0005113345144757582,
+        "mrr": 0.025860522752184048,
+        "irr": -0.0670785553229507,
+        "author_btl": 0.9329214446770493
+      }
+    },
+    "best_observed": {
+      "id": "hparam-nasdaq-s16-u64-a10-sector_industry-rsr_i",
+      "axis": "alpha",
+      "parameters": {
+        "seq": 16,
+        "unit": 64,
+        "alpha": 10
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 46,
+      "best_validation_loss": 0.0006642473301672865,
+      "validation": {
+        "mse": 0.0005085990418053307,
+        "mrr": 0.03829095684233793,
+        "irr": 1.5767555518832523,
+        "author_btl": 2.5767555518832523
+      }
+    },
+    "combination": {
+      "parameters": {
+        "seq": 8,
+        "unit": 32,
+        "alpha": 10
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "id": "hparam-nasdaq-s8-u32-a10-sector_industry-rsr_i",
+      "best_epoch": 48,
+      "best_validation_loss": 0.0006609369490419455,
+      "validation": {
+        "mse": 0.0005136178242100796,
+        "mrr": 0.03212659877529209,
+        "irr": 0.8396885883121286,
+        "author_btl": 1.8396885883121286
+      }
+    },
+    "combination_run_in_batch_5": true,
+    "selected": {
+      "id": "hparam-nasdaq-s16-u64-a10-sector_industry-rsr_i",
+      "axis": "alpha",
+      "parameters": {
+        "seq": 16,
+        "unit": 64,
+        "alpha": 10
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 46,
+      "best_validation_loss": 0.0006642473301672865,
+      "validation": {
+        "mse": 0.0005085990418053307,
+        "mrr": 0.03829095684233793,
+        "irr": 1.5767555518832523,
+        "author_btl": 2.5767555518832523
+      }
+    }
+  },
+  {
+    "market": "NASDAQ",
+    "relation": "sector_industry",
+    "method": "RSR_E",
+    "baseline": {
+      "id": "hparam-nasdaq-s16-u64-a0.1-sector_industry-rsr_e",
+      "axis": "baseline",
+      "parameters": {
+        "seq": 16,
+        "unit": 64,
+        "alpha": 0.1
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 50,
+      "best_validation_loss": 0.0005425693344145585,
+      "validation": {
+        "mse": 0.0005384615982672242,
+        "mrr": 0.03192025895106397,
+        "irr": 1.1074798084591748,
+        "author_btl": 2.107479808459175
+      }
+    },
+    "best_observed": {
+      "id": "hparam-nasdaq-s16-u16-a0.1-sector_industry-rsr_e",
+      "axis": "unit",
+      "parameters": {
+        "seq": 16,
+        "unit": 16,
+        "alpha": 0.1
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 49,
+      "best_validation_loss": 0.0005214795356363221,
+      "validation": {
+        "mse": 0.0005173131046579635,
+        "mrr": 0.034001643903454094,
+        "irr": 2.163585033180425,
+        "author_btl": 3.163585033180425
+      }
+    },
+    "combination": {
+      "parameters": {
+        "seq": 4,
+        "unit": 16,
+        "alpha": 10
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "id": "hparam-nasdaq-s4-u16-a10-sector_industry-rsr_e",
+      "best_epoch": 39,
+      "best_validation_loss": 0.0006104890312671491,
+      "validation": {
+        "mse": 0.0004991833288138991,
+        "mrr": 0.019969002736321788,
+        "irr": 0.46303572770557366,
+        "author_btl": 1.4630357277055737
+      }
+    },
+    "combination_run_in_batch_5": true,
+    "selected": {
+      "id": "hparam-nasdaq-s16-u16-a0.1-sector_industry-rsr_e",
+      "axis": "unit",
+      "parameters": {
+        "seq": 16,
+        "unit": 16,
+        "alpha": 0.1
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 49,
+      "best_validation_loss": 0.0005214795356363221,
+      "validation": {
+        "mse": 0.0005173131046579635,
+        "mrr": 0.034001643903454094,
+        "irr": 2.163585033180425,
+        "author_btl": 3.163585033180425
+      }
+    }
+  },
+  {
+    "market": "NYSE",
+    "relation": "sector_industry",
+    "method": "RSR_I",
+    "baseline": {
+      "id": "hparam-nyse-s8-u32-a10-sector_industry-rsr_i",
+      "axis": "baseline",
+      "parameters": {
+        "seq": 8,
+        "unit": 32,
+        "alpha": 10
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 40,
+      "best_validation_loss": 0.00046198299865604246,
+      "validation": {
+        "mse": 0.00036728186325872395,
+        "mrr": 0.04579359347309096,
+        "irr": 1.1010072163189761,
+        "author_btl": 2.101007216318976
+      }
+    },
+    "best_observed": {
+      "id": "hparam-nyse-s4-u32-a10-sector_industry-rsr_i",
+      "axis": "seq",
+      "parameters": {
+        "seq": 4,
+        "unit": 32,
+        "alpha": 10
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 44,
+      "best_validation_loss": 0.00047147894442859403,
+      "validation": {
+        "mse": 0.0003673182955390791,
+        "mrr": 0.053106005370727107,
+        "irr": 2.1824523664836306,
+        "author_btl": 3.1824523664836306
+      }
+    },
+    "combination": {
+      "parameters": {
+        "seq": 4,
+        "unit": 128,
+        "alpha": 10
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "id": "hparam-nyse-s4-u128-a10-sector_industry-rsr_i",
+      "best_epoch": 40,
+      "best_validation_loss": 0.00046153981643978374,
+      "validation": {
+        "mse": 0.00036914865896785215,
+        "mrr": 0.05069150448549398,
+        "irr": 1.2879235071886797,
+        "author_btl": 2.2879235071886797
+      }
+    },
+    "combination_run_in_batch_5": true,
+    "selected": {
+      "id": "hparam-nyse-s4-u32-a10-sector_industry-rsr_i",
+      "axis": "seq",
+      "parameters": {
+        "seq": 4,
+        "unit": 32,
+        "alpha": 10
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 44,
+      "best_validation_loss": 0.00047147894442859403,
+      "validation": {
+        "mse": 0.0003673182955390791,
+        "mrr": 0.053106005370727107,
+        "irr": 2.1824523664836306,
+        "author_btl": 3.1824523664836306
+      }
+    }
+  },
+  {
+    "market": "NYSE",
+    "relation": "wikidata",
+    "method": "RSR_I",
+    "baseline": {
+      "id": "hparam-nyse-s8-u32-a10-wikidata-rsr_i",
+      "axis": "baseline",
+      "parameters": {
+        "seq": 8,
+        "unit": 32,
+        "alpha": 10
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 43,
+      "best_validation_loss": 0.00044005122612043846,
+      "validation": {
+        "mse": 0.0003658652943417783,
+        "mrr": 0.04472789711032225,
+        "irr": 1.209163432387868,
+        "author_btl": 2.209163432387868
+      }
+    },
+    "best_observed": {
+      "id": "hparam-nyse-s16-u32-a10-wikidata-rsr_i",
+      "axis": "seq",
+      "parameters": {
+        "seq": 16,
+        "unit": 32,
+        "alpha": 10
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 44,
+      "best_validation_loss": 0.0004248709167205518,
+      "validation": {
+        "mse": 0.00036578515543951297,
+        "mrr": 0.05338833364349921,
+        "irr": 1.3795981667353772,
+        "author_btl": 2.379598166735377
+      }
+    },
+    "combination": {
+      "id": "hparam-nyse-s16-u32-a10-wikidata-rsr_i",
+      "axis": "seq",
+      "parameters": {
+        "seq": 16,
+        "unit": 32,
+        "alpha": 10
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 44,
+      "best_validation_loss": 0.0004248709167205518,
+      "validation": {
+        "mse": 0.00036578515543951297,
+        "mrr": 0.05338833364349921,
+        "irr": 1.3795981667353772,
+        "author_btl": 2.379598166735377
+      }
+    },
+    "combination_run_in_batch_5": false,
+    "selected": {
+      "id": "hparam-nyse-s16-u32-a10-wikidata-rsr_i",
+      "axis": "seq",
+      "parameters": {
+        "seq": 16,
+        "unit": 32,
+        "alpha": 10
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 44,
+      "best_validation_loss": 0.0004248709167205518,
+      "validation": {
+        "mse": 0.00036578515543951297,
+        "mrr": 0.05338833364349921,
+        "irr": 1.3795981667353772,
+        "author_btl": 2.379598166735377
+      }
+    }
+  },
+  {
+    "market": "NYSE",
+    "relation": "wikidata",
+    "method": "RSR_E",
+    "baseline": {
+      "id": "hparam-nyse-s8-u32-a10-wikidata-rsr_e",
+      "axis": "baseline",
+      "parameters": {
+        "seq": 8,
+        "unit": 32,
+        "alpha": 10
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 43,
+      "best_validation_loss": 0.00047786170577478876,
+      "validation": {
+        "mse": 0.00036886264659253566,
+        "mrr": 0.07181459614904138,
+        "irr": 1.2759346622042358,
+        "author_btl": 2.275934662204236
+      }
+    },
+    "best_observed": {
+      "id": "hparam-nyse-s8-u32-a1-wikidata-rsr_e",
+      "axis": "alpha",
+      "parameters": {
+        "seq": 8,
+        "unit": 32,
+        "alpha": 1
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 46,
+      "best_validation_loss": 0.0003867554521656573,
+      "validation": {
+        "mse": 0.00037102535224997916,
+        "mrr": 0.06881488992255869,
+        "irr": 2.2359743105480447,
+        "author_btl": 3.2359743105480447
+      }
+    },
+    "combination": {
+      "parameters": {
+        "seq": 16,
+        "unit": 32,
+        "alpha": 1
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "id": "hparam-nyse-s16-u32-a1-wikidata-rsr_e",
+      "best_epoch": 46,
+      "best_validation_loss": 0.0003771853414022305,
+      "validation": {
+        "mse": 0.00036696213884063227,
+        "mrr": 0.05112415151579036,
+        "irr": 0.6465925502971004,
+        "author_btl": 1.6465925502971004
+      }
+    },
+    "combination_run_in_batch_5": true,
+    "selected": {
+      "id": "hparam-nyse-s8-u32-a1-wikidata-rsr_e",
+      "axis": "alpha",
+      "parameters": {
+        "seq": 8,
+        "unit": 32,
+        "alpha": 1
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 46,
+      "best_validation_loss": 0.0003867554521656573,
+      "validation": {
+        "mse": 0.00037102535224997916,
+        "mrr": 0.06881488992255869,
+        "irr": 2.2359743105480447,
+        "author_btl": 3.2359743105480447
+      }
+    }
+  },
+  {
+    "market": "NYSE",
+    "relation": "sector_industry",
+    "method": "RSR_E",
+    "baseline": {
+      "id": "hparam-nyse-s8-u32-a10-sector_industry-rsr_e",
+      "axis": "baseline",
+      "parameters": {
+        "seq": 8,
+        "unit": 32,
+        "alpha": 10
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 43,
+      "best_validation_loss": 0.0004775098108987708,
+      "validation": {
+        "mse": 0.00036883945741392844,
+        "mrr": 0.05517876625968424,
+        "irr": 1.6498553107958287,
+        "author_btl": 2.6498553107958287
+      }
+    },
+    "best_observed": {
+      "id": "hparam-nyse-s16-u32-a10-sector_industry-rsr_e",
+      "axis": "seq",
+      "parameters": {
+        "seq": 16,
+        "unit": 32,
+        "alpha": 10
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 35,
+      "best_validation_loss": 0.0004408173953711484,
+      "validation": {
+        "mse": 0.00036665145484204886,
+        "mrr": 0.05150358548584412,
+        "irr": 1.7636298525030725,
+        "author_btl": 2.7636298525030725
+      }
+    },
+    "combination": {
+      "id": "hparam-nyse-s16-u32-a10-sector_industry-rsr_e",
+      "axis": "seq",
+      "parameters": {
+        "seq": 16,
+        "unit": 32,
+        "alpha": 10
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 35,
+      "best_validation_loss": 0.0004408173953711484,
+      "validation": {
+        "mse": 0.00036665145484204886,
+        "mrr": 0.05150358548584412,
+        "irr": 1.7636298525030725,
+        "author_btl": 2.7636298525030725
+      }
+    },
+    "combination_run_in_batch_5": false,
+    "selected": {
+      "id": "hparam-nyse-s16-u32-a10-sector_industry-rsr_e",
+      "axis": "seq",
+      "parameters": {
+        "seq": 16,
+        "unit": 32,
+        "alpha": 10
+      },
+      "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+      "best_epoch": 35,
+      "best_validation_loss": 0.0004408173953711484,
+      "validation": {
+        "mse": 0.00036665145484204886,
+        "mrr": 0.05150358548584412,
+        "irr": 1.7636298525030725,
+        "author_btl": 2.7636298525030725
+      }
+    }
+  }
+]

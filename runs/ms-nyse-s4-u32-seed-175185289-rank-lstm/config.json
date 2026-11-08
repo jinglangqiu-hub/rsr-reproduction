@@ -1,0 +1,27 @@
+{
+  "manifest_sha256": "4875cc9fb8f7385108086940855e3f46d3f08822410920e1417b255a42664801",
+  "multiseed_plan_sha256": "3288e09cc9a42ed62cf888cda3286e0c54d2f2856d70751e07ef5f23da24bdf6",
+  "run": {
+    "id": "ms-nyse-s4-u32-seed-175185289-rank-lstm",
+    "configuration": "ms-nyse-s4-u32-seed-175185289-rank-lstm",
+    "seed": 175185289
+  },
+  "configuration": {
+    "market": "NYSE",
+    "seq": 4,
+    "unit": 32,
+    "lr": 0.001,
+    "steps": 1,
+    "epochs": 50,
+    "ticker_file": "NYSE_tickers_qualify_dr-0.98_min-5_smooth.csv",
+    "stocks": 1737,
+    "batch": 6,
+    "axis": "multiseed",
+    "parameter_provenance": "five_seed_fixed_hyperparameters",
+    "stage": "embedding",
+    "alpha": 1,
+    "method": "Rank_LSTM",
+    "relation": null,
+    "inner_prod": null
+  }
+}

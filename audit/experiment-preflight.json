@@ -1,0 +1,151 @@
+{
+  "manifest_sha256": "037842cbe2509486c1e77e847de03d41934ae560094cd71c87dbfef4f18e71e1",
+  "input_hashes_verified": true,
+  "optimizer_steps_executed": 0,
+  "runs": [
+    {
+      "id": "nasdaq-wikidata-rsri-public-seed-123456789",
+      "seed": 123456789,
+      "optimizer_steps_planned": 37000,
+      "first_epoch_validation_labels_in_train": 16,
+      "validation_labels_in_train_over_all_epochs": 781,
+      "relation_shape": [
+        1026,
+        1026,
+        43
+      ],
+      "embedding_shape": [
+        1026,
+        1245,
+        64
+      ],
+      "parameter_provenance": "author_readme"
+    },
+    {
+      "id": "nyse-sector_industry-rsri-public-seed-123456789",
+      "seed": 123456789,
+      "optimizer_steps_planned": 37400,
+      "first_epoch_validation_labels_in_train": 8,
+      "validation_labels_in_train_over_all_epochs": 393,
+      "relation_shape": [
+        1737,
+        1737,
+        108
+      ],
+      "embedding_shape": [
+        1737,
+        1245,
+        32
+      ],
+      "parameter_provenance": "author_readme"
+    },
+    {
+      "id": "nasdaq-wikidata-rsre-public-seed-123456789",
+      "seed": 123456789,
+      "optimizer_steps_planned": 37000,
+      "first_epoch_validation_labels_in_train": 16,
+      "validation_labels_in_train_over_all_epochs": 781,
+      "relation_shape": [
+        1026,
+        1026,
+        43
+      ],
+      "embedding_shape": [
+        1026,
+        1245,
+        64
+      ],
+      "parameter_provenance": "market_template"
+    },
+    {
+      "id": "nasdaq-sector_industry-rsri-public-seed-123456789",
+      "seed": 123456789,
+      "optimizer_steps_planned": 37000,
+      "first_epoch_validation_labels_in_train": 16,
+      "validation_labels_in_train_over_all_epochs": 781,
+      "relation_shape": [
+        1026,
+        1026,
+        97
+      ],
+      "embedding_shape": [
+        1026,
+        1245,
+        64
+      ],
+      "parameter_provenance": "market_template"
+    },
+    {
+      "id": "nasdaq-sector_industry-rsre-public-seed-123456789",
+      "seed": 123456789,
+      "optimizer_steps_planned": 37000,
+      "first_epoch_validation_labels_in_train": 16,
+      "validation_labels_in_train_over_all_epochs": 781,
+      "relation_shape": [
+        1026,
+        1026,
+        97
+      ],
+      "embedding_shape": [
+        1026,
+        1245,
+        64
+      ],
+      "parameter_provenance": "market_template"
+    },
+    {
+      "id": "nyse-wikidata-rsri-public-seed-123456789",
+      "seed": 123456789,
+      "optimizer_steps_planned": 37400,
+      "first_epoch_validation_labels_in_train": 8,
+      "validation_labels_in_train_over_all_epochs": 393,
+      "relation_shape": [
+        1737,
+        1737,
+        33
+      ],
+      "embedding_shape": [
+        1737,
+        1245,
+        32
+      ],
+      "parameter_provenance": "market_template"
+    },
+    {
+      "id": "nyse-wikidata-rsre-public-seed-123456789",
+      "seed": 123456789,
+      "optimizer_steps_planned": 37400,
+      "first_epoch_validation_labels_in_train": 8,
+      "validation_labels_in_train_over_all_epochs": 393,
+      "relation_shape": [
+        1737,
+        1737,
+        33
+      ],
+      "embedding_shape": [
+        1737,
+        1245,
+        32
+      ],
+      "parameter_provenance": "market_template"
+    },
+    {
+      "id": "nyse-sector_industry-rsre-public-seed-123456789",
+      "seed": 123456789,
+      "optimizer_steps_planned": 37400,
+      "first_epoch_validation_labels_in_train": 8,
+      "validation_labels_in_train_over_all_epochs": 393,
+      "relation_shape": [
+        1737,
+        1737,
+        108
+      ],
+      "embedding_shape": [
+        1737,
+        1245,
+        32
+      ],
+      "parameter_provenance": "market_template"
+    }
+  ]
+}

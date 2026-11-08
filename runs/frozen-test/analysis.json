@@ -1,0 +1,536 @@
+{
+  "manifest_sha256": "b61890a6f47d809ec437616aef3a05cb6ecfe70e2348a33b75e1564b02da38cd",
+  "runs": [
+    {
+      "id": "hparam-nasdaq-s8-u64-a0.1-wikidata-rsr_i",
+      "market": "NASDAQ",
+      "relation": "wikidata",
+      "method": "RSR_I",
+      "parameters": {
+        "seq": 8,
+        "unit": 64,
+        "alpha": 0.1
+      },
+      "best_epoch": 32,
+      "validation": {
+        "mse": 0.0004947207214364347,
+        "mrr": 0.04604584234683504,
+        "irr": 2.2762703609769233,
+        "author_btl": 3.2762703609769233
+      },
+      "test": {
+        "mse": 0.0004776785674074123,
+        "mrr": 0.035986033969072316,
+        "irr": 0.40380641288356856
+      },
+      "positive_days": 116,
+      "top_positive_days": [
+        {
+          "date": "2017-09-08",
+          "ticker": "NLNK",
+          "return": 0.29926571249961853,
+          "rank": 1
+        },
+        {
+          "date": "2017-04-28",
+          "ticker": "SNCR",
+          "return": 0.20391400158405304,
+          "rank": 2
+        },
+        {
+          "date": "2017-08-14",
+          "ticker": "XIV",
+          "return": 0.1263085901737213,
+          "rank": 1
+        }
+      ],
+      "top_negative_days": [
+        {
+          "date": "2017-11-10",
+          "ticker": "FTR",
+          "return": -0.1494961827993393,
+          "rank": 1026
+        },
+        {
+          "date": "2017-05-03",
+          "ticker": "PCMI",
+          "return": -0.1479821801185608,
+          "rank": 1024
+        },
+        {
+          "date": "2017-04-18",
+          "ticker": "ARNA",
+          "return": -0.13513261079788208,
+          "rank": 1026
+        }
+      ],
+      "irr_without_best_day": 0.10454070038395002,
+      "irr_without_best_three_days": -0.22568189137382433
+    },
+    {
+      "id": "hparam-nasdaq-s8-u64-a0.1-wikidata-rsr_e",
+      "market": "NASDAQ",
+      "relation": "wikidata",
+      "method": "RSR_E",
+      "parameters": {
+        "seq": 8,
+        "unit": 64,
+        "alpha": 0.1
+      },
+      "best_epoch": 42,
+      "validation": {
+        "mse": 0.0004962769114211064,
+        "mrr": 0.03784236456198695,
+        "irr": 1.7736592763685621,
+        "author_btl": 2.773659276368562
+      },
+      "test": {
+        "mse": 0.00048066818560964296,
+        "mrr": 0.0358327764143733,
+        "irr": 1.1669358737417497
+      },
+      "positive_days": 138,
+      "top_positive_days": [
+        {
+          "date": "2017-04-28",
+          "ticker": "SNCR",
+          "return": 0.20391400158405304,
+          "rank": 2
+        },
+        {
+          "date": "2017-02-01",
+          "ticker": "PMD",
+          "return": 0.13036450743675232,
+          "rank": 2
+        },
+        {
+          "date": "2017-08-14",
+          "ticker": "XIV",
+          "return": 0.1263085901737213,
+          "rank": 1
+        }
+      ],
+      "top_negative_days": [
+        {
+          "date": "2017-05-03",
+          "ticker": "PCMI",
+          "return": -0.1479821801185608,
+          "rank": 1024
+        },
+        {
+          "date": "2017-07-28",
+          "ticker": "PCMI",
+          "return": -0.11912783980369568,
+          "rank": 1020
+        },
+        {
+          "date": "2017-05-02",
+          "ticker": "ASPS",
+          "return": -0.11706795543432236,
+          "rank": 1023
+        }
+      ],
+      "irr_without_best_day": 0.9630218721576966,
+      "irr_without_best_three_days": 0.706348774547223
+    },
+    {
+      "id": "hparam-nasdaq-s16-u64-a10-sector_industry-rsr_i",
+      "market": "NASDAQ",
+      "relation": "sector_industry",
+      "method": "RSR_I",
+      "parameters": {
+        "seq": 16,
+        "unit": 64,
+        "alpha": 10
+      },
+      "best_epoch": 46,
+      "validation": {
+        "mse": 0.0005085990418053307,
+        "mrr": 0.03829095684233793,
+        "irr": 1.5767555518832523,
+        "author_btl": 2.5767555518832523
+      },
+      "test": {
+        "mse": 0.0008088861020253728,
+        "mrr": 0.024681090229143447,
+        "irr": 0.6989952629082836
+      },
+      "positive_days": 118,
+      "top_positive_days": [
+        {
+          "date": "2017-04-28",
+          "ticker": "SNCR",
+          "return": 0.20391400158405304,
+          "rank": 2
+        },
+        {
+          "date": "2017-02-01",
+          "ticker": "PMD",
+          "return": 0.13036450743675232,
+          "rank": 2
+        },
+        {
+          "date": "2017-08-14",
+          "ticker": "XIV",
+          "return": 0.1263085901737213,
+          "rank": 1
+        }
+      ],
+      "top_negative_days": [
+        {
+          "date": "2017-12-01",
+          "ticker": "OSTK",
+          "return": -0.10191129893064499,
+          "rank": 1019
+        },
+        {
+          "date": "2017-04-10",
+          "ticker": "NKTR",
+          "return": -0.08006133139133453,
+          "rank": 1025
+        },
+        {
+          "date": "2017-06-15",
+          "ticker": "MACK",
+          "return": -0.07086889445781708,
+          "rank": 1023
+        }
+      ],
+      "irr_without_best_day": 0.4950812613242306,
+      "irr_without_best_three_days": 0.23840816371375695
+    },
+    {
+      "id": "hparam-nasdaq-s16-u16-a0.1-sector_industry-rsr_e",
+      "market": "NASDAQ",
+      "relation": "sector_industry",
+      "method": "RSR_E",
+      "parameters": {
+        "seq": 16,
+        "unit": 16,
+        "alpha": 0.1
+      },
+      "best_epoch": 49,
+      "validation": {
+        "mse": 0.0005173131046579635,
+        "mrr": 0.034001643903454094,
+        "irr": 2.163585033180425,
+        "author_btl": 3.163585033180425
+      },
+      "test": {
+        "mse": 0.0005923320404823265,
+        "mrr": 0.009990851064142686,
+        "irr": 0.21863887357176282
+      },
+      "positive_days": 140,
+      "top_positive_days": [
+        {
+          "date": "2017-03-30",
+          "ticker": "HSKA",
+          "return": 0.07299488037824631,
+          "rank": 2
+        },
+        {
+          "date": "2017-06-28",
+          "ticker": "HSKA",
+          "return": 0.07035096734762192,
+          "rank": 9
+        },
+        {
+          "date": "2017-03-13",
+          "ticker": "CTXS",
+          "return": 0.06789825111627579,
+          "rank": 8
+        }
+      ],
+      "top_negative_days": [
+        {
+          "date": "2017-05-03",
+          "ticker": "PCMI",
+          "return": -0.1479821801185608,
+          "rank": 1024
+        },
+        {
+          "date": "2017-11-10",
+          "ticker": "BRKS",
+          "return": -0.08667806535959244,
+          "rank": 1024
+        },
+        {
+          "date": "2017-05-02",
+          "ticker": "PCMI",
+          "return": -0.08418797701597214,
+          "rank": 1022
+        }
+      ],
+      "irr_without_best_day": 0.1456439931935165,
+      "irr_without_best_three_days": 0.007394774729618803
+    },
+    {
+      "id": "hparam-nyse-s4-u32-a10-sector_industry-rsr_i",
+      "market": "NYSE",
+      "relation": "sector_industry",
+      "method": "RSR_I",
+      "parameters": {
+        "seq": 4,
+        "unit": 32,
+        "alpha": 10
+      },
+      "best_epoch": 44,
+      "validation": {
+        "mse": 0.0003673182955390791,
+        "mrr": 0.053106005370727107,
+        "irr": 2.1824523664836306,
+        "author_btl": 3.1824523664836306
+      },
+      "test": {
+        "mse": 0.0002295372988013778,
+        "mrr": 0.05582296780011041,
+        "irr": 1.781928069278365
+      },
+      "positive_days": 130,
+      "top_positive_days": [
+        {
+          "date": "2017-10-30",
+          "ticker": "TWO",
+          "return": 0.6395950317382812,
+          "rank": 1
+        },
+        {
+          "date": "2017-10-25",
+          "ticker": "TWO",
+          "return": 0.6265067458152771,
+          "rank": 1
+        },
+        {
+          "date": "2017-01-19",
+          "ticker": "CCJ",
+          "return": 0.09861929714679718,
+          "rank": 2
+        }
+      ],
+      "top_negative_days": [
+        {
+          "date": "2017-05-25",
+          "ticker": "BRS",
+          "return": -0.1932079941034317,
+          "rank": 1732
+        },
+        {
+          "date": "2017-07-24",
+          "ticker": "CRR",
+          "return": -0.0907798632979393,
+          "rank": 1733
+        },
+        {
+          "date": "2017-02-22",
+          "ticker": "MTR",
+          "return": -0.08641933649778366,
+          "rank": 1734
+        }
+      ],
+      "irr_without_best_day": 1.1423330375400838,
+      "irr_without_best_three_days": 0.41720699457800947
+    },
+    {
+      "id": "hparam-nyse-s16-u32-a10-wikidata-rsr_i",
+      "market": "NYSE",
+      "relation": "wikidata",
+      "method": "RSR_I",
+      "parameters": {
+        "seq": 16,
+        "unit": 32,
+        "alpha": 10
+      },
+      "best_epoch": 44,
+      "validation": {
+        "mse": 0.00036578515543951297,
+        "mrr": 0.05338833364349921,
+        "irr": 1.3795981667353772,
+        "author_btl": 2.379598166735377
+      },
+      "test": {
+        "mse": 0.0002476434880525274,
+        "mrr": 0.04446690182899727,
+        "irr": 0.336343888862757
+      },
+      "positive_days": 112,
+      "top_positive_days": [
+        {
+          "date": "2017-01-26",
+          "ticker": "CRR",
+          "return": 0.2921338975429535,
+          "rank": 1
+        },
+        {
+          "date": "2017-03-15",
+          "ticker": "CRR",
+          "return": 0.10383205860853195,
+          "rank": 1
+        },
+        {
+          "date": "2017-05-05",
+          "ticker": "CRR",
+          "return": 0.09394211322069168,
+          "rank": 9
+        }
+      ],
+      "top_negative_days": [
+        {
+          "date": "2017-04-27",
+          "ticker": "CRR",
+          "return": -0.2634410560131073,
+          "rank": 1730
+        },
+        {
+          "date": "2017-07-24",
+          "ticker": "CRR",
+          "return": -0.0907798632979393,
+          "rank": 1728
+        },
+        {
+          "date": "2017-06-14",
+          "ticker": "CRR",
+          "return": -0.0885392501950264,
+          "rank": 1728
+        }
+      ],
+      "irr_without_best_day": 0.04420999131980352,
+      "irr_without_best_three_days": -0.1535641805094201
+    },
+    {
+      "id": "hparam-nyse-s8-u32-a1-wikidata-rsr_e",
+      "market": "NYSE",
+      "relation": "wikidata",
+      "method": "RSR_E",
+      "parameters": {
+        "seq": 8,
+        "unit": 32,
+        "alpha": 1
+      },
+      "best_epoch": 46,
+      "validation": {
+        "mse": 0.00037102535224997916,
+        "mrr": 0.06881488992255869,
+        "irr": 2.2359743105480447,
+        "author_btl": 3.2359743105480447
+      },
+      "test": {
+        "mse": 0.0003204943064292666,
+        "mrr": 0.058734378191706106,
+        "irr": 1.7458597749646287
+      },
+      "positive_days": 115,
+      "top_positive_days": [
+        {
+          "date": "2017-10-30",
+          "ticker": "TWO",
+          "return": 0.6395950317382812,
+          "rank": 1
+        },
+        {
+          "date": "2017-10-25",
+          "ticker": "TWO",
+          "return": 0.6265067458152771,
+          "rank": 1
+        },
+        {
+          "date": "2017-01-26",
+          "ticker": "CRR",
+          "return": 0.2921338975429535,
+          "rank": 1
+        }
+      ],
+      "top_negative_days": [
+        {
+          "date": "2017-04-27",
+          "ticker": "CRR",
+          "return": -0.2634410560131073,
+          "rank": 1732
+        },
+        {
+          "date": "2017-07-24",
+          "ticker": "CRR",
+          "return": -0.0907798632979393,
+          "rank": 1732
+        },
+        {
+          "date": "2017-11-14",
+          "ticker": "WLL",
+          "return": -0.09005992859601974,
+          "rank": 1732
+        }
+      ],
+      "irr_without_best_day": 1.1062647432263475,
+      "irr_without_best_three_days": 0.1876240998681169
+    },
+    {
+      "id": "hparam-nyse-s16-u32-a10-sector_industry-rsr_e",
+      "market": "NYSE",
+      "relation": "sector_industry",
+      "method": "RSR_E",
+      "parameters": {
+        "seq": 16,
+        "unit": 32,
+        "alpha": 10
+      },
+      "best_epoch": 35,
+      "validation": {
+        "mse": 0.00036665145484204886,
+        "mrr": 0.05150358548584412,
+        "irr": 1.7636298525030725,
+        "author_btl": 2.7636298525030725
+      },
+      "test": {
+        "mse": 0.00024421053802106983,
+        "mrr": 0.00926593176378266,
+        "irr": -0.06002292159246281
+      },
+      "positive_days": 117,
+      "top_positive_days": [
+        {
+          "date": "2017-04-27",
+          "ticker": "UAA",
+          "return": 0.0994381308555603,
+          "rank": 6
+        },
+        {
+          "date": "2017-02-17",
+          "ticker": "CRY",
+          "return": 0.07142858952283859,
+          "rank": 5
+        },
+        {
+          "date": "2017-12-07",
+          "ticker": "CMD",
+          "return": 0.06306754052639008,
+          "rank": 6
+        }
+      ],
+      "top_negative_days": [
+        {
+          "date": "2017-06-08",
+          "ticker": "WLL",
+          "return": -0.06874431669712067,
+          "rank": 1726
+        },
+        {
+          "date": "2017-11-24",
+          "ticker": "SIG",
+          "return": -0.06055540218949318,
+          "rank": 1734
+        },
+        {
+          "date": "2017-02-21",
+          "ticker": "CRY",
+          "return": -0.05507209897041321,
+          "rank": 1728
+        }
+      ],
+      "irr_without_best_day": -0.1594610524480231,
+      "irr_without_best_three_days": -0.2939571824972518
+    }
+  ],
+  "verified_predictions": 8,
+  "trading_days_per_run": 237,
+  "optimizer_steps_executed": 0
+}

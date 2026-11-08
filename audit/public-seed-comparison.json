@@ -1,0 +1,739 @@
+{
+  "manifest_sha256": "037842cbe2509486c1e77e847de03d41934ae560094cd71c87dbfef4f18e71e1",
+  "prediction_metrics_rechecked": true,
+  "paper_repetitions": 5,
+  "comparisons": [
+    {
+      "id": "nasdaq-wikidata-rsri-public-seed-123456789",
+      "seed": 123456789,
+      "market": "NASDAQ",
+      "relation": "wikidata",
+      "method": "RSR_I",
+      "paper_table": 7,
+      "parameter_provenance": "author_readme",
+      "best_epoch": 36,
+      "test": {
+        "mse": {
+          "mean": 0.000379,
+          "reported_spread": 6.6e-07,
+          "local": 0.00037929700117133377,
+          "difference": 2.970011713337691e-07,
+          "difference_over_reported_spread": 0.45000177474813496
+        },
+        "mrr": {
+          "mean": 0.0409,
+          "reported_spread": 0.00518,
+          "local": 0.03864207751854031,
+          "difference": -0.002257922481459687,
+          "difference_over_reported_spread": -0.4358923709381636
+        },
+        "irr": {
+          "mean": 1.19,
+          "reported_spread": 0.55,
+          "local": 0.9565484546474181,
+          "difference": -0.23345154535258184,
+          "difference_over_reported_spread": -0.4244573551865124
+        }
+      },
+      "diagnostics": {
+        "trading_days": 237,
+        "positive_days": 128,
+        "top_positive_days": [
+          {
+            "day": 81,
+            "date": "2017-04-28",
+            "ticker": "SNCR",
+            "realized_rank": 2,
+            "daily_return": 0.20391400158405304
+          },
+          {
+            "day": 15,
+            "date": "2017-01-24",
+            "ticker": "AVNW",
+            "realized_rank": 1,
+            "daily_return": 0.1922694891691208
+          },
+          {
+            "day": 173,
+            "date": "2017-09-08",
+            "ticker": "FNHC",
+            "realized_rank": 3,
+            "daily_return": 0.14217710494995117
+          }
+        ],
+        "top_negative_days": [
+          {
+            "day": 103,
+            "date": "2017-05-31",
+            "ticker": "MACK",
+            "realized_rank": 1026,
+            "daily_return": -0.2325628399848938
+          },
+          {
+            "day": 63,
+            "date": "2017-04-03",
+            "ticker": "ACOR",
+            "realized_rank": 1026,
+            "daily_return": -0.12380963563919067
+          },
+          {
+            "day": 144,
+            "date": "2017-07-28",
+            "ticker": "PCMI",
+            "realized_rank": 1020,
+            "daily_return": -0.11912783980369568
+          }
+        ],
+        "paper_figure_6_days": []
+      }
+    },
+    {
+      "id": "nyse-sector_industry-rsri-public-seed-123456789",
+      "seed": 123456789,
+      "market": "NYSE",
+      "relation": "sector_industry",
+      "method": "RSR_I",
+      "paper_table": 6,
+      "parameter_provenance": "author_readme",
+      "best_epoch": 48,
+      "test": {
+        "mse": {
+          "mean": 0.000226,
+          "reported_spread": 5.3e-07,
+          "local": 0.00022672239011629647,
+          "difference": 7.223901162964829e-07,
+          "difference_over_reported_spread": 1.3630002194273263
+        },
+        "mrr": {
+          "mean": 0.0451,
+          "reported_spread": 0.00241,
+          "local": 0.046298050666320374,
+          "difference": 0.001198050666320373,
+          "difference_over_reported_spread": 0.49711645905409674
+        },
+        "irr": {
+          "mean": 1.06,
+          "reported_spread": 0.27,
+          "local": 1.4779266486511915,
+          "difference": 0.41792664865119145,
+          "difference_over_reported_spread": 1.547876476485894
+        }
+      },
+      "diagnostics": {
+        "trading_days": 237,
+        "positive_days": 111,
+        "top_positive_days": [
+          {
+            "day": 209,
+            "date": "2017-10-30",
+            "ticker": "TWO",
+            "realized_rank": 1,
+            "daily_return": 0.6395950317382812
+          },
+          {
+            "day": 206,
+            "date": "2017-10-25",
+            "ticker": "TWO",
+            "realized_rank": 1,
+            "daily_return": 0.6265067458152771
+          },
+          {
+            "day": 17,
+            "date": "2017-01-26",
+            "ticker": "CRR",
+            "realized_rank": 1,
+            "daily_return": 0.2921338975429535
+          }
+        ],
+        "top_negative_days": [
+          {
+            "day": 140,
+            "date": "2017-07-24",
+            "ticker": "CRR",
+            "realized_rank": 1732,
+            "daily_return": -0.0907798632979393
+          },
+          {
+            "day": 113,
+            "date": "2017-06-14",
+            "ticker": "CRR",
+            "realized_rank": 1730,
+            "daily_return": -0.0885392501950264
+          },
+          {
+            "day": 108,
+            "date": "2017-06-07",
+            "ticker": "CRR",
+            "realized_rank": 1727,
+            "daily_return": -0.08529190719127655
+          }
+        ],
+        "paper_figure_6_days": [
+          {
+            "day": 206,
+            "date": "2017-10-25",
+            "ticker": "TWO",
+            "realized_rank": 1,
+            "daily_return": 0.6265067458152771
+          },
+          {
+            "day": 209,
+            "date": "2017-10-30",
+            "ticker": "TWO",
+            "realized_rank": 1,
+            "daily_return": 0.6395950317382812
+          }
+        ]
+      }
+    },
+    {
+      "id": "nasdaq-wikidata-rsre-public-seed-123456789",
+      "seed": 123456789,
+      "market": "NASDAQ",
+      "relation": "wikidata",
+      "method": "RSR_E",
+      "paper_table": 7,
+      "parameter_provenance": "market_template",
+      "best_epoch": 36,
+      "test": {
+        "mse": {
+          "mean": 0.00038,
+          "reported_spread": 7.2e-07,
+          "local": 0.0003803697920509369,
+          "difference": 3.697920509368913e-07,
+          "difference_over_reported_spread": 0.5136000707456824
+        },
+        "mrr": {
+          "mean": 0.0394,
+          "reported_spread": 0.00815,
+          "local": 0.0505115895216565,
+          "difference": 0.0111115895216565,
+          "difference_over_reported_spread": 1.3633852173811658
+        },
+        "irr": {
+          "mean": 0.81,
+          "reported_spread": 0.85,
+          "local": 1.1447900086641312,
+          "difference": 0.3347900086641311,
+          "difference_over_reported_spread": 0.39387059842838956
+        }
+      },
+      "diagnostics": {
+        "trading_days": 237,
+        "positive_days": 114,
+        "top_positive_days": [
+          {
+            "day": 193,
+            "date": "2017-10-06",
+            "ticker": "SNCR",
+            "realized_rank": 1,
+            "daily_return": 0.31996262073516846
+          },
+          {
+            "day": 81,
+            "date": "2017-04-28",
+            "ticker": "SNCR",
+            "realized_rank": 2,
+            "daily_return": 0.20391400158405304
+          },
+          {
+            "day": 15,
+            "date": "2017-01-24",
+            "ticker": "AVNW",
+            "realized_rank": 1,
+            "daily_return": 0.1922694891691208
+          }
+        ],
+        "top_negative_days": [
+          {
+            "day": 144,
+            "date": "2017-07-28",
+            "ticker": "PCMI",
+            "realized_rank": 1020,
+            "daily_return": -0.11912783980369568
+          },
+          {
+            "day": 104,
+            "date": "2017-06-01",
+            "ticker": "MACK",
+            "realized_rank": 1026,
+            "daily_return": -0.10192658007144928
+          },
+          {
+            "day": 85,
+            "date": "2017-05-04",
+            "ticker": "ASPS",
+            "realized_rank": 1021,
+            "daily_return": -0.08706241846084595
+          }
+        ],
+        "paper_figure_6_days": []
+      }
+    },
+    {
+      "id": "nasdaq-sector_industry-rsri-public-seed-123456789",
+      "seed": 123456789,
+      "market": "NASDAQ",
+      "relation": "sector_industry",
+      "method": "RSR_I",
+      "paper_table": 6,
+      "parameter_provenance": "market_template",
+      "best_epoch": 26,
+      "test": {
+        "mse": {
+          "mean": 0.00038,
+          "reported_spread": 7.9e-07,
+          "local": 0.00038064102982894425,
+          "difference": 6.410298289442288e-07,
+          "difference_over_reported_spread": 0.8114301632205428
+        },
+        "mrr": {
+          "mean": 0.0317,
+          "reported_spread": 0.00509,
+          "local": 0.03150385066622737,
+          "difference": -0.00019614933377262722,
+          "difference_over_reported_spread": -0.038536214886567235
+        },
+        "irr": {
+          "mean": 0.23,
+          "reported_spread": 0.27,
+          "local": 0.6889542338903993,
+          "difference": 0.45895423389039935,
+          "difference_over_reported_spread": 1.6998304958903678
+        }
+      },
+      "diagnostics": {
+        "trading_days": 237,
+        "positive_days": 114,
+        "top_positive_days": [
+          {
+            "day": 81,
+            "date": "2017-04-28",
+            "ticker": "SNCR",
+            "realized_rank": 2,
+            "daily_return": 0.20391400158405304
+          },
+          {
+            "day": 15,
+            "date": "2017-01-24",
+            "ticker": "AVNW",
+            "realized_rank": 1,
+            "daily_return": 0.1922694891691208
+          },
+          {
+            "day": 226,
+            "date": "2017-11-22",
+            "ticker": "FTR",
+            "realized_rank": 2,
+            "daily_return": 0.11581076681613922
+          }
+        ],
+        "top_negative_days": [
+          {
+            "day": 89,
+            "date": "2017-05-10",
+            "ticker": "MTRX",
+            "realized_rank": 1025,
+            "daily_return": -0.09090756624937057
+          },
+          {
+            "day": 208,
+            "date": "2017-10-27",
+            "ticker": "SQQQ",
+            "realized_rank": 1015,
+            "daily_return": -0.08653532713651657
+          },
+          {
+            "day": 124,
+            "date": "2017-06-29",
+            "ticker": "MACK",
+            "realized_rank": 1026,
+            "daily_return": -0.07857324182987213
+          }
+        ],
+        "paper_figure_6_days": []
+      }
+    },
+    {
+      "id": "nasdaq-sector_industry-rsre-public-seed-123456789",
+      "seed": 123456789,
+      "market": "NASDAQ",
+      "relation": "sector_industry",
+      "method": "RSR_E",
+      "paper_table": 6,
+      "parameter_provenance": "market_template",
+      "best_epoch": 43,
+      "test": {
+        "mse": {
+          "mean": 0.000382,
+          "reported_spread": 2.69e-06,
+          "local": 0.00039433588923255906,
+          "difference": 1.2335889232559043e-05,
+          "difference_over_reported_spread": 4.585832428460611
+        },
+        "mrr": {
+          "mean": 0.0316,
+          "reported_spread": 0.00345,
+          "local": 0.029194730879915975,
+          "difference": -0.0024052691200840276,
+          "difference_over_reported_spread": -0.6971794550968196
+        },
+        "irr": {
+          "mean": 0.2,
+          "reported_spread": 0.22,
+          "local": -0.012820731324609369,
+          "difference": -0.21282073132460938,
+          "difference_over_reported_spread": -0.9673669605664063
+        }
+      },
+      "diagnostics": {
+        "trading_days": 237,
+        "positive_days": 108,
+        "top_positive_days": [
+          {
+            "day": 81,
+            "date": "2017-04-28",
+            "ticker": "SNCR",
+            "realized_rank": 2,
+            "daily_return": 0.20391400158405304
+          },
+          {
+            "day": 119,
+            "date": "2017-06-22",
+            "ticker": "MACK",
+            "realized_rank": 3,
+            "daily_return": 0.1145048439502716
+          },
+          {
+            "day": 123,
+            "date": "2017-06-28",
+            "ticker": "MACK",
+            "realized_rank": 1,
+            "daily_return": 0.10236368328332901
+          }
+        ],
+        "top_negative_days": [
+          {
+            "day": 144,
+            "date": "2017-07-28",
+            "ticker": "ESND",
+            "realized_rank": 1018,
+            "daily_return": -0.09901133924722672
+          },
+          {
+            "day": 124,
+            "date": "2017-06-29",
+            "ticker": "MACK",
+            "realized_rank": 1026,
+            "daily_return": -0.07857324182987213
+          },
+          {
+            "day": 10,
+            "date": "2017-01-17",
+            "ticker": "NLNK",
+            "realized_rank": 1001,
+            "daily_return": -0.07570531964302063
+          }
+        ],
+        "paper_figure_6_days": []
+      }
+    },
+    {
+      "id": "nyse-wikidata-rsri-public-seed-123456789",
+      "seed": 123456789,
+      "market": "NYSE",
+      "relation": "wikidata",
+      "method": "RSR_I",
+      "paper_table": 7,
+      "parameter_provenance": "market_template",
+      "best_epoch": 50,
+      "test": {
+        "mse": {
+          "mean": 0.000226,
+          "reported_spread": 1.37e-06,
+          "local": 0.0002270484645720791,
+          "difference": 1.0484645720790968e-06,
+          "difference_over_reported_spread": 0.765302607357005
+        },
+        "mrr": {
+          "mean": 0.0458,
+          "reported_spread": 0.00555,
+          "local": 0.03408354492711172,
+          "difference": -0.01171645507288828,
+          "difference_over_reported_spread": -2.111072986105996
+        },
+        "irr": {
+          "mean": 0.79,
+          "reported_spread": 0.34,
+          "local": 1.5155760777415708,
+          "difference": 0.7255760777415707,
+          "difference_over_reported_spread": 2.134047287475208
+        }
+      },
+      "diagnostics": {
+        "trading_days": 237,
+        "positive_days": 126,
+        "top_positive_days": [
+          {
+            "day": 209,
+            "date": "2017-10-30",
+            "ticker": "TWO",
+            "realized_rank": 1,
+            "daily_return": 0.6395950317382812
+          },
+          {
+            "day": 206,
+            "date": "2017-10-25",
+            "ticker": "TWO",
+            "realized_rank": 1,
+            "daily_return": 0.6265067458152771
+          },
+          {
+            "day": 177,
+            "date": "2017-09-14",
+            "ticker": "RAS-C",
+            "realized_rank": 2,
+            "daily_return": 0.2500012516975403
+          }
+        ],
+        "top_negative_days": [
+          {
+            "day": 208,
+            "date": "2017-10-27",
+            "ticker": "TWO",
+            "realized_rank": 1736,
+            "daily_return": -0.3885791003704071
+          },
+          {
+            "day": 100,
+            "date": "2017-05-25",
+            "ticker": "BRS",
+            "realized_rank": 1732,
+            "daily_return": -0.1932079941034317
+          },
+          {
+            "day": 128,
+            "date": "2017-07-06",
+            "ticker": "CBI",
+            "realized_rank": 1729,
+            "daily_return": -0.08182185143232346
+          }
+        ],
+        "paper_figure_6_days": [
+          {
+            "day": 206,
+            "date": "2017-10-25",
+            "ticker": "TWO",
+            "realized_rank": 1,
+            "daily_return": 0.6265067458152771
+          },
+          {
+            "day": 209,
+            "date": "2017-10-30",
+            "ticker": "TWO",
+            "realized_rank": 1,
+            "daily_return": 0.6395950317382812
+          }
+        ]
+      }
+    },
+    {
+      "id": "nyse-wikidata-rsre-public-seed-123456789",
+      "seed": 123456789,
+      "market": "NYSE",
+      "relation": "wikidata",
+      "method": "RSR_E",
+      "paper_table": 7,
+      "parameter_provenance": "market_template",
+      "best_epoch": 48,
+      "test": {
+        "mse": {
+          "mean": 0.000229,
+          "reported_spread": 2.77e-06,
+          "local": 0.00022564495443748596,
+          "difference": -3.3550455625140456e-06,
+          "difference_over_reported_spread": -1.2112077843010993
+        },
+        "mrr": {
+          "mean": 0.0428,
+          "reported_spread": 0.00618,
+          "local": 0.032881689668182376,
+          "difference": -0.009918310331817622,
+          "difference_over_reported_spread": -1.6049045844365084
+        },
+        "irr": {
+          "mean": 0.96,
+          "reported_spread": 0.47,
+          "local": 0.9833148232428357,
+          "difference": 0.023314823242835736,
+          "difference_over_reported_spread": 0.04960600689965051
+        }
+      },
+      "diagnostics": {
+        "trading_days": 237,
+        "positive_days": 113,
+        "top_positive_days": [
+          {
+            "day": 209,
+            "date": "2017-10-30",
+            "ticker": "TWO",
+            "realized_rank": 1,
+            "daily_return": 0.6395950317382812
+          },
+          {
+            "day": 206,
+            "date": "2017-10-25",
+            "ticker": "TWO",
+            "realized_rank": 1,
+            "daily_return": 0.6265067458152771
+          },
+          {
+            "day": 12,
+            "date": "2017-01-19",
+            "ticker": "CCJ",
+            "realized_rank": 2,
+            "daily_return": 0.09861929714679718
+          }
+        ],
+        "top_negative_days": [
+          {
+            "day": 100,
+            "date": "2017-05-25",
+            "ticker": "BRS",
+            "realized_rank": 1732,
+            "daily_return": -0.1932079941034317
+          },
+          {
+            "day": 225,
+            "date": "2017-11-21",
+            "ticker": "GNC",
+            "realized_rank": 1734,
+            "daily_return": -0.14412976801395416
+          },
+          {
+            "day": 125,
+            "date": "2017-06-30",
+            "ticker": "CBI",
+            "realized_rank": 1732,
+            "daily_return": -0.085301473736763
+          }
+        ],
+        "paper_figure_6_days": [
+          {
+            "day": 206,
+            "date": "2017-10-25",
+            "ticker": "TWO",
+            "realized_rank": 1,
+            "daily_return": 0.6265067458152771
+          },
+          {
+            "day": 209,
+            "date": "2017-10-30",
+            "ticker": "TWO",
+            "realized_rank": 1,
+            "daily_return": 0.6395950317382812
+          }
+        ]
+      }
+    },
+    {
+      "id": "nyse-sector_industry-rsre-public-seed-123456789",
+      "seed": 123456789,
+      "market": "NYSE",
+      "relation": "sector_industry",
+      "method": "RSR_E",
+      "paper_table": 6,
+      "parameter_provenance": "market_template",
+      "best_epoch": 48,
+      "test": {
+        "mse": {
+          "mean": 0.000229,
+          "reported_spread": 2.77e-06,
+          "local": 0.0002280905474353901,
+          "difference": -9.094525646099203e-07,
+          "difference_over_reported_spread": -0.3283222254909459
+        },
+        "mrr": {
+          "mean": 0.0428,
+          "reported_spread": 0.00618,
+          "local": 0.03266094349266263,
+          "difference": -0.010139056507337367,
+          "difference_over_reported_spread": -1.6406240303134898
+        },
+        "irr": {
+          "mean": 1.0,
+          "reported_spread": 0.58,
+          "local": 1.1237955308188248,
+          "difference": 0.12379553081882477,
+          "difference_over_reported_spread": 0.21344057037728412
+        }
+      },
+      "diagnostics": {
+        "trading_days": 237,
+        "positive_days": 119,
+        "top_positive_days": [
+          {
+            "day": 209,
+            "date": "2017-10-30",
+            "ticker": "TWO",
+            "realized_rank": 1,
+            "daily_return": 0.6395950317382812
+          },
+          {
+            "day": 206,
+            "date": "2017-10-25",
+            "ticker": "TWO",
+            "realized_rank": 1,
+            "daily_return": 0.6265067458152771
+          },
+          {
+            "day": 50,
+            "date": "2017-03-15",
+            "ticker": "BPT",
+            "realized_rank": 2,
+            "daily_return": 0.09846017509698868
+          }
+        ],
+        "top_negative_days": [
+          {
+            "day": 80,
+            "date": "2017-04-27",
+            "ticker": "CRR",
+            "realized_rank": 1732,
+            "daily_return": -0.2634410560131073
+          },
+          {
+            "day": 100,
+            "date": "2017-05-25",
+            "ticker": "BRS",
+            "realized_rank": 1732,
+            "daily_return": -0.1932079941034317
+          },
+          {
+            "day": 113,
+            "date": "2017-06-14",
+            "ticker": "WLL",
+            "realized_rank": 1733,
+            "daily_return": -0.12480899691581726
+          }
+        ],
+        "paper_figure_6_days": [
+          {
+            "day": 206,
+            "date": "2017-10-25",
+            "ticker": "TWO",
+            "realized_rank": 1,
+            "daily_return": 0.6265067458152771
+          },
+          {
+            "day": 209,
+            "date": "2017-10-30",
+            "ticker": "TWO",
+            "realized_rank": 1,
+            "daily_return": 0.6395950317382812
+          }
+        ]
+      }
+    }
+  ]
+}
