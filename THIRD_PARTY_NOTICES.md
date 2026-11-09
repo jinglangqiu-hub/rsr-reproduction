@@ -1,4 +1,6 @@
-# 原始来源与修改说明
+# Attribution and modifications · 原始来源与修改说明
+
+Feng et al. authored RSR, Temporal Graph Convolution and the original experiments. This repository adapts the released code to a compatible TensorFlow environment and documents the local reproduction and independent evaluation. The pinned implementation and GNU AGPL v3 license remain the basis of the port. [Paper](https://doi.org/10.1145/3309547) · [Citation](CITATION.bib) · [License](LICENSE)
 
 本项目基于 Fuli Feng 等作者的 Temporal Relational Ranking for Stock Prediction / Relational Stock Ranking 实现。
 

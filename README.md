@@ -1,75 +1,59 @@
-# RSR 股票排序实验复现
+# Relational Stock Ranking — a reproduction study
 
-论文 **Temporal Relational Ranking for Stock Prediction** 的本机 GPU 复现项目，包含 TensorFlow 兼容代码、实验编排、浏览器监测、超参数搜索、五随机种子评估及结果图表。
+[简体中文](README.zh-CN.md) · [Research Note](docs/RESEARCH_NOTE.md) · [Reproduce the workflow](docs/REPRODUCING.md)
 
-当前已完成 **174 次训练：48 次 Rank_LSTM 预训练 + 126 次 RSR 训练**。已覆盖 NASDAQ / NYSE × Wiki / Industry × 隐式 / 显式的 8 组 RSR 配置。原作者数值复现取得部分一致；后续搜索和五种子实验采用单独记录的训练边界与归一化协议，结论见 [现阶段结果](docs/EXPERIMENT_RESULTS.md)。
+Can company relationships help rank stocks by next-day return? This undergraduate reproduction study examines how Feng et al.’s Relational Stock Ranking (RSR) model combines price histories with company relationships, and how closely the released implementation reproduces the paper’s results. It also examines how the test results vary across seeds and trading days under a separately documented protocol. [Original paper, ACM TOIS 2019](https://doi.org/10.1145/3309547)
 
-## 原始来源
+## Model
 
-- 作者仓库：[fulifeng/Temporal_Relational_Stock_Ranking](https://github.com/fulifeng/Temporal_Relational_Stock_Ranking)
-- 固定提交：`cfbb01bdf194b81bc5893a1b37aff1c0d0d2a82d`，通过 `upstream/` Git 子模块保留。
-- [论文](https://arxiv.org/abs/1809.09441)、[引用信息](CITATION.bib)、[上游声明与改动说明](THIRD_PARTY_NOTICES.md)。
+A shared LSTM encodes a window of closing prices and 5-, 10-, 20-, and 30-day moving averages for each stock. Temporal Graph Convolution uses those embeddings and the relation tensor to compute day-dependent propagation weights on the industry or Wikidata graph. **RSR_E** uses an embedding dot product times a learned relation score. **RSR_I** learns the relation score from endpoint embeddings and relation features. The prediction head uses both the original and propagated embeddings. The objective combines squared return error and a pairwise penalty for reversed rankings. [Paper §§3–4](https://arxiv.org/abs/1809.09441v2) · [Mathematics and implementation](docs/RESEARCH_NOTE.md#2-model-architecture-and-mathematical-reading)
 
-## 项目结构
+<details>
+<summary>Paper-level architecture diagram (Chinese)</summary>
 
-| 路径 | 内容 |
-| --- | --- |
-| `upstream/` | 固定版本的原作者代码与数据来源，Git 子模块 |
-| `compat/` | TensorFlow 2.21 的图模式兼容实现、原始数据整理与核验 |
-| `environment/` | GPU 环境锁定依赖、CUDA 链接与 GPU 验证 |
-| `experiments/` | 作者种子、单因素搜索、组合验证、冻结测试、五种子训练脚本 |
-| `runs/` | 各次训练的配置、结果、逐轮日志、进度及全阶段计划/汇总 |
-| `audit/` | 数据校验、训练前核验、论文结果对照等研究证据 |
-| `tools/` | 浏览器监测、数值分析、绘图和归档工具 |
-| `figures/` | 作者结果对照、超参数阶段、五种子阶段的 PNG / SVG 图表 |
-| `docs/` | 环境恢复、数据与附件范围、实验结果说明 |
+![RSR schematic from price windows through temporal encoding and relation propagation to stock ranking](RSR时序关系股票预测完整流程图.png)
 
-## 环境与使用
+The diagram illustrates the paper’s framework. The Research Note describes the released code’s column-wise softmax, implicit scoring and price-to-return head. The local runs use a pretrained encoder followed by a separate relation stage.
 
-训练环境为 Windows 11 + WSL2 Ubuntu，Python **3.11.18**、TensorFlow **2.21.0**、NumPy **1.26.4**；实测 GPU 为 NVIDIA GeForce RTX 5070 Ti Laptop。依赖使用 TensorFlow 内部兼容接口，应按锁文件恢复版本。
+</details>
 
-```bash
-git clone --recurse-submodules https://github.com/jinglangqiu-hub/rsr-reproduction.git
+## Reproduction scope and protocols
+
+The study covers eight RSR configurations: two markets (NASDAQ and NYSE), two relation graphs (Industry and Wikidata), and two scoring variants (RSR_I and RSR_E). The author-supplied universe contains 1,026 NASDAQ and 1,737 NYSE stocks. Both markets have 756 training days (2013–2015), 252 validation days (2016) and 237 test days (2017). [Dataset audit](audit/author-data-verification.json)
+
+| Protocol | Design | Evidence |
+| --- | --- | --- |
+| A · Released workflow | Eight runs using the published seed 123456789 and supplied embeddings. Two configurations follow the author README. Six use the corresponding market’s README hyperparameters. | [Run manifest](experiments/manifest.json) · [Paper comparison](audit/public-seed-comparison.json) |
+| B · Independent evaluation | Training-only scaling and training-window boundaries. One-factor searches over window length, hidden size and ranking weight, followed by six new parameter combinations. Settings were frozen before test evaluation and then used to retrain both stages with five new seeds. | [Selection and results](docs/EXPERIMENT_RESULTS.md) · [Frozen settings](runs/frozen-test-manifest.json) · [Five-seed analysis](runs/multiseed-analysis.json) |
+
+Both protocols use a one-day horizon, Adam at 0.001 and 50 epochs per fit. Protocol B selects the lowest validation-loss checkpoint in each fit and ranks candidate settings by validation IRR at that checkpoint. The record contains 174 completed fits, including 48 Rank_LSTM fits and 126 RSR fits. The frozen evaluation between selection and five-seed retraining was inference only. Coverage is limited to the eight RSR configurations, with Rank_LSTM used as an encoder. [Experiment index](experiments/README.md)
+
+## Results
+
+**Protocol A achieved partial numerical reproduction.** Across eight runs, the largest relative deviation from the corresponding paper mean was 3.23% for test mean squared error (MSE). For the two README configurations, local versus paper test IRR was 95.65% versus 119% (NASDAQ Wikidata RSR_I) and 147.79% versus 106% (NYSE Industry RSR_I). The paper values summarize five runs and the local values are single runs. The full author seed list, the pretraining seeds and six configuration-specific settings remain unknown. [Eight-way comparison](audit/public-seed-comparison.json) · [Comparison figure](figures/public-seed/01-test-metrics.png)
+
+**Protocol B showed substantial seed and date sensitivity.** The five new seeds gave 36 positive test IRRs out of 40 RSR runs. The four negative runs all used seed 1846380228 on NASDAQ. For NYSE Industry RSR_I, mean test IRR was **109.16%** (sample SD **31.47 percentage points**) and fell to **−17.45%** after excluding two fixed dates on which all five runs selected TWO. Matching seeds yielded mixed implicit-versus-explicit results. [Per-seed analysis](runs/multiseed-analysis.json) · [Event sensitivity figure](figures/multiseed/03-event-day-sensitivity.png)
+
+![Test MSE, MRR and IRR for the eight frozen configurations with all five seed observations](figures/multiseed/01-test-metrics-mean-std.png)
+
+*Protocol B test results. Bars show ±1 sample standard deviation across the five new seeds. The orange squares show the earlier Protocol B tuning seed for reference. MSE measures return error across eligible stock-days, MRR measures the realized rank of the daily top pick, and IRR is the sum of its daily simple returns.*
+
+The test statistics describe one historical market window, a retrospectively filtered universe and static relation graphs. The simulated strategy assumes execution at the closing price and omits trading costs. The study does not yet cover the complete baseline, ablation or trading-strategy comparisons in the paper. [Detailed findings and scope](docs/RESEARCH_NOTE.md)
+
+## Reproduce and inspect
+
+Use Python 3.11.18, TensorFlow 2.21.0 and the locked WSL2 GPU environment for compatibility checks. The archived summaries and figures can be inspected directly, and the local log viewer uses the Python standard library.
+
+~~~bash
+git clone https://github.com/jinglangqiu-hub/rsr-reproduction.git
 cd rsr-reproduction
-```
-
-请先阅读 [环境与数据恢复步骤](docs/REPRODUCING.md) 和 [数据及 Release 附件说明](docs/DATA_AND_ARTIFACTS.md)。仓库不会自动启动训练；既有实验清单绑定了文件 SHA-256，不能随意修改源码、清单或覆盖历史输出。
-
-只查看已记录的训练过程时，Python 标准库即可运行监测服务：
-
-```bash
 python tools/monitor_training.py
-```
+~~~
 
-浏览器打开 **http://127.0.0.1:8766/?view=parameters&batch=6**。页面显示市场、关系集、显式/隐式建模、序列长度 S、隐藏维度 U、排序权重 α、学习率、种子和训练阶段；指标提供完整中英文名称。
+Open [the local monitor](http://127.0.0.1:8766/?view=parameters&batch=6) after starting the viewer. To restore author inputs, initialize the pinned submodule and follow the environment and data guide. The Release contains predictions, checkpoints and evaluation caches with SHA-256 checks. Large generated embeddings require separate recovery for the complete local audit. [Setup and checks](docs/REPRODUCING.md) · [Artifact inventory](docs/DATA_AND_ARTIFACTS.md) · [Release](https://github.com/jinglangqiu-hub/rsr-reproduction/releases/tag/v0.1.0-experiments)
 
-## 最终配置与五种子结果
+## Research Note and attribution
 
-共用设置：Adam 学习率 `0.001`，每次 `50` 轮，预测步长 `1`；Rank_LSTM 预训练排序权重为 `1`。每个种子同时重训两个阶段，共 30 次预训练、40 次关系训练。
+The notes trace the paper’s mathematical design through the implementation, the two protocols and the limits of the observed results. [English](docs/RESEARCH_NOTE.md) · [简体中文](docs/RESEARCH_NOTE.zh-CN.md) · [Evidence and figure index](docs/README.md)
 
-| 市场 | 关系 | 建模 | S | U | α | 测试 IRR 均值 ± 样本标准差 | 正收益种子 |
-| --- | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| NASDAQ | Wiki | 隐式 RSR_I | 8 | 64 | 0.1 | 54.54% ± 66.47% | 4/5 |
-| NASDAQ | Wiki | 显式 RSR_E | 8 | 64 | 0.1 | 42.94% ± 45.40% | 4/5 |
-| NASDAQ | Industry | 隐式 RSR_I | 16 | 64 | 10 | 22.04% ± 30.93% | 4/5 |
-| NASDAQ | Industry | 显式 RSR_E | 16 | 16 | 0.1 | 24.87% ± 96.01% | 4/5 |
-| NYSE | Wiki | 隐式 RSR_I | 16 | 32 | 10 | 117.58% ± 105.64% | 5/5 |
-| NYSE | Wiki | 显式 RSR_E | 8 | 32 | 1 | 121.86% ± 68.55% | 5/5 |
-| NYSE | Industry | 隐式 RSR_I | 4 | 32 | 10 | 109.16% ± 31.47% | 5/5 |
-| NYSE | Industry | 显式 RSR_E | 16 | 32 | 10 | 105.59% ± 67.27% | 5/5 |
-
-五个新种子：`175185289, 425827170, 1846380228, 1772992330, 20885008`。作者公开关系训练种子 `123456789` 用于前期复现与选参，不计入新五种子的统计。
-
-**IRR：累计投资回报率 / Cumulative Investment Return Ratio**，按作者评估器对每日首选股票的简单收益率求和，不是复利净值。误差范围为五次运行的样本标准差（`ddof=1`），不是置信区间。
-
-![五种子测试结果](figures/multiseed/01-test-metrics-mean-std.png)
-
-需结合种子波动与事件敏感性解读收益。NYSE Industry 隐式模型的两个固定交易日合计贡献 126.61 个百分点；剔除这两天后，平均 IRR 为 −17.45%。详见 [完整分析及复现边界](docs/EXPERIMENT_RESULTS.md)。
-
-## 数据与产物保存
-
-Git 保存源码、轻量实验记录与图表。逐股预测、TensorFlow 检查点、评估缓存另存于 [Release 附件](https://github.com/jinglangqiu-hub/rsr-reproduction/releases/tag/v0.1.0-experiments)，逐文件 SHA-256 见 [附件清单](docs/artifact-manifest.json)。原始行情、关系图、作者预训练数据由固定上游版本恢复；运行产生的大型嵌入不随附件上传。具体恢复范围和限制见 [说明](docs/DATA_AND_ARTIFACTS.md)。
-
-## 许可证
-
-沿用原作者仓库的 **GNU AGPL v3** 许可证，完整文本见 [LICENSE](LICENSE)。本项目包含对上游实现的适配与实验工具，原作者及论文出处见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+RSR and Temporal Graph Convolution are from **Fuli Feng, Xiangnan He, Xiang Wang, Cheng Luo, Yiqun Liu and Tat-Seng Chua**. The reproduction project contributes a compatibility port, experiment tooling and analyses of the recorded runs. The author implementation is pinned at cfbb01bdf194b81bc5893a1b37aff1c0d0d2a82d. [Pinned upstream](https://github.com/fulifeng/Temporal_Relational_Stock_Ranking/tree/cfbb01bdf194b81bc5893a1b37aff1c0d0d2a82d) · [BibTeX](CITATION.bib) · [Modification notice](THIRD_PARTY_NOTICES.md) · [GNU AGPL v3](LICENSE)

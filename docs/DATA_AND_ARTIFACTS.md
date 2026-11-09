@@ -1,4 +1,8 @@
-# 数据和产物的保存范围
+# Data and artifacts · 数据和产物
+
+[Recovery steps](REPRODUCING.md) · [中文恢复步骤](REPRODUCING.zh-CN.md) · [证据索引](README.md)
+
+Git contains the source, frozen plans, logs, result summaries, figures, ticker lists and calendars. The Release holds the predictions, TensorFlow checkpoints and evaluation caches. Recover author inputs from the pinned submodule and public pretraining archive. Generated encoder embeddings require separate recovery for the full five-seed audit. [Release](https://github.com/jinglangqiu-hub/rsr-reproduction/releases/tag/v0.1.0-experiments) · [SHA-256 inventory](artifact-manifest.json)
 
 ## Git 内保存
 
@@ -39,7 +43,7 @@ python -m zipfile -e artifacts/rsr-experiment-artifacts-v1.zip .
 
 ## 本地保留、未上传
 
-- `compat/data` 中的逐股行情、稠密关系图和作者预训练数组：从作者固定版本/公开归档恢复，步骤见 `REPRODUCING.md`。
+- `compat/data` 中的逐股行情、稠密关系图和作者预训练数组：从作者固定版本/公开归档恢复，参见 [恢复步骤](REPRODUCING.zh-CN.md)。
 - `runs/` 中约 13 GB 的 `.npy` 数组，包括各阶段编码器嵌入：属于可重新生成的大型中间产物。本地原文件完整保留。
 - `downloads/` 下载缓存、`original/` 早期重复副本、论文 PDF、本机安装和软件清单。
 
